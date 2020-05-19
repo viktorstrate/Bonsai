@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		343085FD2474838C00675B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343085FC2474838C00675B1A /* AppDelegate.swift */; };
+		343085FF2474838C00675B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343085FE2474838C00675B1A /* ViewController.swift */; };
+		343086012474838C00675B1A /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086002474838C00675B1A /* Document.swift */; };
+		343086032474838E00675B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343086022474838E00675B1A /* Assets.xcassets */; };
+		343086062474838E00675B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343086042474838E00675B1A /* Main.storyboard */; };
+		343086122474838E00675B1A /* BonsaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086112474838E00675B1A /* BonsaiTests.swift */; };
+		3430861D2474838E00675B1A /* BonsaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430861C2474838E00675B1A /* BonsaiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3430860E2474838E00675B1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 343085F12474838C00675B1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 343085F82474838C00675B1A;
+			remoteInfo = Bonsai;
+		};
+		343086192474838E00675B1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 343085F12474838C00675B1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 343085F82474838C00675B1A;
+			remoteInfo = Bonsai;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		343085F92474838C00675B1A /* Bonsai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bonsai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		343085FC2474838C00675B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		343085FE2474838C00675B1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		343086002474838C00675B1A /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		343086022474838E00675B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		343086052474838E00675B1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		343086072474838E00675B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343086082474838E00675B1A /* Bonsai.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bonsai.entitlements; sourceTree = "<group>"; };
+		3430860D2474838E00675B1A /* BonsaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonsaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		343086112474838E00675B1A /* BonsaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonsaiTests.swift; sourceTree = "<group>"; };
+		343086132474838E00675B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343086182474838E00675B1A /* BonsaiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonsaiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3430861C2474838E00675B1A /* BonsaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonsaiUITests.swift; sourceTree = "<group>"; };
+		3430861E2474838E00675B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		343085F62474838C00675B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3430860A2474838E00675B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343086152474838E00675B1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		343085F02474838C00675B1A = {
+			isa = PBXGroup;
+			children = (
+				343085FB2474838C00675B1A /* Bonsai */,
+				343086102474838E00675B1A /* BonsaiTests */,
+				3430861B2474838E00675B1A /* BonsaiUITests */,
+				343085FA2474838C00675B1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		343085FA2474838C00675B1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				343085F92474838C00675B1A /* Bonsai.app */,
+				3430860D2474838E00675B1A /* BonsaiTests.xctest */,
+				343086182474838E00675B1A /* BonsaiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		343085FB2474838C00675B1A /* Bonsai */ = {
+			isa = PBXGroup;
+			children = (
+				343085FC2474838C00675B1A /* AppDelegate.swift */,
+				343085FE2474838C00675B1A /* ViewController.swift */,
+				343086002474838C00675B1A /* Document.swift */,
+				343086022474838E00675B1A /* Assets.xcassets */,
+				343086042474838E00675B1A /* Main.storyboard */,
+				343086072474838E00675B1A /* Info.plist */,
+				343086082474838E00675B1A /* Bonsai.entitlements */,
+			);
+			path = Bonsai;
+			sourceTree = "<group>";
+		};
+		343086102474838E00675B1A /* BonsaiTests */ = {
+			isa = PBXGroup;
+			children = (
+				343086112474838E00675B1A /* BonsaiTests.swift */,
+				343086132474838E00675B1A /* Info.plist */,
+			);
+			path = BonsaiTests;
+			sourceTree = "<group>";
+		};
+		3430861B2474838E00675B1A /* BonsaiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3430861C2474838E00675B1A /* BonsaiUITests.swift */,
+				3430861E2474838E00675B1A /* Info.plist */,
+			);
+			path = BonsaiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		343085F82474838C00675B1A /* Bonsai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343086212474838E00675B1A /* Build configuration list for PBXNativeTarget "Bonsai" */;
+			buildPhases = (
+				343085F52474838C00675B1A /* Sources */,
+				343085F62474838C00675B1A /* Frameworks */,
+				343085F72474838C00675B1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bonsai;
+			productName = Bonsai;
+			productReference = 343085F92474838C00675B1A /* Bonsai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3430860C2474838E00675B1A /* BonsaiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343086242474838E00675B1A /* Build configuration list for PBXNativeTarget "BonsaiTests" */;
+			buildPhases = (
+				343086092474838E00675B1A /* Sources */,
+				3430860A2474838E00675B1A /* Frameworks */,
+				3430860B2474838E00675B1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3430860F2474838E00675B1A /* PBXTargetDependency */,
+			);
+			name = BonsaiTests;
+			productName = BonsaiTests;
+			productReference = 3430860D2474838E00675B1A /* BonsaiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		343086172474838E00675B1A /* BonsaiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343086272474838E00675B1A /* Build configuration list for PBXNativeTarget "BonsaiUITests" */;
+			buildPhases = (
+				343086142474838E00675B1A /* Sources */,
+				343086152474838E00675B1A /* Frameworks */,
+				343086162474838E00675B1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3430861A2474838E00675B1A /* PBXTargetDependency */,
+			);
+			name = BonsaiUITests;
+			productName = BonsaiUITests;
+			productReference = 343086182474838E00675B1A /* BonsaiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		343085F12474838C00675B1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = viktorstrate;
+				TargetAttributes = {
+					343085F82474838C00675B1A = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					3430860C2474838E00675B1A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 343085F82474838C00675B1A;
+					};
+					343086172474838E00675B1A = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 343085F82474838C00675B1A;
+					};
+				};
+			};
+			buildConfigurationList = 343085F42474838C00675B1A /* Build configuration list for PBXProject "Bonsai" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 343085F02474838C00675B1A;
+			productRefGroup = 343085FA2474838C00675B1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				343085F82474838C00675B1A /* Bonsai */,
+				3430860C2474838E00675B1A /* BonsaiTests */,
+				343086172474838E00675B1A /* BonsaiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		343085F72474838C00675B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343086032474838E00675B1A /* Assets.xcassets in Resources */,
+				343086062474838E00675B1A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3430860B2474838E00675B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343086162474838E00675B1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		343085F52474838C00675B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343085FF2474838C00675B1A /* ViewController.swift in Sources */,
+				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
+				343086012474838C00675B1A /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343086092474838E00675B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343086122474838E00675B1A /* BonsaiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343086142474838E00675B1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3430861D2474838E00675B1A /* BonsaiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3430860F2474838E00675B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 343085F82474838C00675B1A /* Bonsai */;
+			targetProxy = 3430860E2474838E00675B1A /* PBXContainerItemProxy */;
+		};
+		3430861A2474838E00675B1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 343085F82474838C00675B1A /* Bonsai */;
+			targetProxy = 343086192474838E00675B1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		343086042474838E00675B1A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				343086052474838E00675B1A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3430861F2474838E00675B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		343086202474838E00675B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		343086222474838E00675B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Bonsai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		343086232474838E00675B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Bonsai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		343086252474838E00675B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BonsaiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.BonsaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonsai.app/Contents/MacOS/Bonsai";
+			};
+			name = Debug;
+		};
+		343086262474838E00675B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BonsaiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.BonsaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonsai.app/Contents/MacOS/Bonsai";
+			};
+			name = Release;
+		};
+		343086282474838E00675B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BonsaiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.BonsaiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Bonsai;
+			};
+			name = Debug;
+		};
+		343086292474838E00675B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BonsaiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.BonsaiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Bonsai;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		343085F42474838C00675B1A /* Build configuration list for PBXProject "Bonsai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3430861F2474838E00675B1A /* Debug */,
+				343086202474838E00675B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343086212474838E00675B1A /* Build configuration list for PBXNativeTarget "Bonsai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343086222474838E00675B1A /* Debug */,
+				343086232474838E00675B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343086242474838E00675B1A /* Build configuration list for PBXNativeTarget "BonsaiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343086252474838E00675B1A /* Debug */,
+				343086262474838E00675B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343086272474838E00675B1A /* Build configuration list for PBXNativeTarget "BonsaiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343086282474838E00675B1A /* Debug */,
+				343086292474838E00675B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 343085F12474838C00675B1A /* Project object */;
+}
