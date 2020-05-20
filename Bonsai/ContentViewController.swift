@@ -20,15 +20,15 @@ class ContentViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        textView.string = documentContent!.contentString
+        
         // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-            if let docContent = documentContent {
-                textView.string = docContent.contentString
-            }
+            // Document content changed
         }
     }
 

@@ -26,19 +26,23 @@ class CodeDocument: NSDocument {
     override func makeWindowControllers() {
         
         // Returns the Storyboard that contains your Document window.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+//        let windowController = storyboard.instantiateController(withIdentifier:
+//          NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+        
+        let windowController = NSWindowController(windowNibName: NSNib.Name("MainWindow"))
+        windowController.contentViewController = ContentViewController(nibName: NSNib.Name("ContentView"), bundle: Bundle.main)
 
         guard let viewController = windowController.contentViewController as? ContentViewController else {
             fatalError("failed to get content view controller from document")
         }
-        
+
         viewController.representedObject = codeContent
         self.contentViewController = viewController
-        
+
         self.addWindowController(windowController)
-        
-        
+
+
     }
 
     override func data(ofType typeName: String) throws -> Data {
