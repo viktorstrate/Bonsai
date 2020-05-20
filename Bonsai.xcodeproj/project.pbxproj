@@ -14,12 +14,13 @@
 		343086122474838E00675B1A /* BonsaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086112474838E00675B1A /* BonsaiTests.swift */; };
 		3430861D2474838E00675B1A /* BonsaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430861C2474838E00675B1A /* BonsaiUITests.swift */; };
 		3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430862A247484A000675B1A /* CodeDocumentController.swift */; };
+		345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */; };
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881A824751DBA007AF5C6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881A624751DB9007AF5C6 /* MainMenu.xib */; };
 		346881A924751DBA007AF5C6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881A724751DBA007AF5C6 /* MainWindow.xib */; };
 		346881AB247521D4007AF5C6 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881AA247521D4007AF5C6 /* ContentView.xib */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
-		346881B224752F6E007AF5C6 /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */; };
+		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +55,13 @@
 		3430861C2474838E00675B1A /* BonsaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonsaiUITests.swift; sourceTree = "<group>"; };
 		3430861E2474838E00675B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3430862A247484A000675B1A /* CodeDocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentController.swift; sourceTree = "<group>"; };
+		345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeTextGutter+LineNumbers.swift"; sourceTree = "<group>"; };
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881A624751DB9007AF5C6 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		346881A724751DBA007AF5C6 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		346881AA247521D4007AF5C6 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
-		346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
+		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				346881AE24752F01007AF5C6 /* CodeTextView.swift */,
-				346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */,
+				346881B124752F6E007AF5C6 /* CodeTextGutter.swift */,
+				345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */,
 			);
 			path = CodeTextView;
 			sourceTree = "<group>";
@@ -303,7 +306,8 @@
 			files = (
 				346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */,
 				343085FF2474838C00675B1A /* ContentViewController.swift in Sources */,
-				346881B224752F6E007AF5C6 /* LineNumberRulerView.swift in Sources */,
+				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,
+				346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */,
 				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
 				3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */,
 				3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */,
