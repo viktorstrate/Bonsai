@@ -18,6 +18,8 @@
 		346881A824751DBA007AF5C6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881A624751DB9007AF5C6 /* MainMenu.xib */; };
 		346881A924751DBA007AF5C6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881A724751DBA007AF5C6 /* MainWindow.xib */; };
 		346881AB247521D4007AF5C6 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346881AA247521D4007AF5C6 /* ContentView.xib */; };
+		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
+		346881B224752F6E007AF5C6 /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		346881A624751DB9007AF5C6 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		346881A724751DBA007AF5C6 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		346881AA247521D4007AF5C6 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
+		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +110,9 @@
 		343085FB2474838C00675B1A /* Bonsai */ = {
 			isa = PBXGroup;
 			children = (
+				346881AD24752EEB007AF5C6 /* Document */,
+				346881AC24752ECD007AF5C6 /* ContentView */,
 				343085FC2474838C00675B1A /* AppDelegate.swift */,
-				343085FE2474838C00675B1A /* ContentViewController.swift */,
-				343086002474838C00675B1A /* CodeDocument.swift */,
-				3430862A247484A000675B1A /* CodeDocumentController.swift */,
-				346881692475116A007AF5C6 /* CodeContent.swift */,
-				346881AA247521D4007AF5C6 /* ContentView.xib */,
 				346881A724751DBA007AF5C6 /* MainWindow.xib */,
 				346881A624751DB9007AF5C6 /* MainMenu.xib */,
 				343086022474838E00675B1A /* Assets.xcassets */,
@@ -137,6 +138,35 @@
 				3430861E2474838E00675B1A /* Info.plist */,
 			);
 			path = BonsaiUITests;
+			sourceTree = "<group>";
+		};
+		346881AC24752ECD007AF5C6 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				346881B024752F54007AF5C6 /* CodeTextView */,
+				343085FE2474838C00675B1A /* ContentViewController.swift */,
+				346881AA247521D4007AF5C6 /* ContentView.xib */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		346881AD24752EEB007AF5C6 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				343086002474838C00675B1A /* CodeDocument.swift */,
+				3430862A247484A000675B1A /* CodeDocumentController.swift */,
+				346881692475116A007AF5C6 /* CodeContent.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		346881B024752F54007AF5C6 /* CodeTextView */ = {
+			isa = PBXGroup;
+			children = (
+				346881AE24752F01007AF5C6 /* CodeTextView.swift */,
+				346881B124752F6E007AF5C6 /* LineNumberRulerView.swift */,
+			);
+			path = CodeTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */,
 				343085FF2474838C00675B1A /* ContentViewController.swift in Sources */,
+				346881B224752F6E007AF5C6 /* LineNumberRulerView.swift in Sources */,
 				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
 				3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */,
 				3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */,
