@@ -8,8 +8,16 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ContentViewController: NSViewController {
 
+    var documentContent: CodeContent? {
+        get {
+            return representedObject as? CodeContent
+        }
+    }
+    
+    @IBOutlet var textView: NSTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,10 +26,11 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            if let docContent = documentContent {
+                textView.string = docContent.contentString
+            }
         }
     }
-
 
 }
 
