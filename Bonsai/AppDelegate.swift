@@ -12,8 +12,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillFinishLaunching(_ notification: Notification) {
-        // Initialize shared document controller
-        _ = CodeDocumentController()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
