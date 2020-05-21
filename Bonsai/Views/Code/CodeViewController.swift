@@ -9,27 +9,20 @@
 import Cocoa
 
 class CodeViewController: NSViewController {
-
-    var documentContent: CodeContent? {
-        get {
-            return representedObject as? CodeContent
-        }
-    }
     
-    @IBOutlet var textView: CodeTextView!
+    @IBOutlet weak var textView: CodeTextView!
+    
+    private weak var editorController: EditorViewController!
+    
+    func editorSetup(editorController: EditorViewController) {
+        self.editorController = editorController
+        updateDocumentContent()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.setup()
-        
-        updateDocumentContent()
-    }
-
-    override var representedObject: Any? {
-        didSet {
-            updateDocumentContent()
-        }
     }
     
     func updateDocumentContent() {
@@ -37,7 +30,7 @@ class CodeViewController: NSViewController {
             return
         }
         
-        guard let documentContent = documentContent else {
+        guard let documentContent = editorController.document?.codeContent else {
             return
         }
         

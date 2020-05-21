@@ -14,6 +14,8 @@ class CodeTextView: NSTextView {
     
     func setup() {
         self.textContainerInset = NSSize(width: 0, height: 10)
+        self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
+        
         registerLineNumbers()
     }
     

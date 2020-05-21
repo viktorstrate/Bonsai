@@ -8,11 +8,43 @@
 
 import Cocoa
 
-class EditorViewController: NSViewController {
+class EditorViewController: NSSplitViewController {
 
+    var projectController: ProjectViewController {
+        get {
+            return self.splitViewItems[0].viewController as! ProjectViewController
+        }
+    }
+    
+    var codeController: CodeViewController {
+        get {
+            return self.splitViewItems[1].viewController as! CodeViewController
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
+    
+    func documentSetup() {
+        codeController.editorSetup(editorController: self)
+        projectController.editorSetup(editorController: self)
+    }
+    
+    var document: CodeDocument? {
+        get {
+            return representedObject as? CodeDocument
+        }
+    }
+    
+    override var representedObject: Any? {
+        didSet {
+            codeController.editorSetup(editorController: self)
+            projectController.editorSetup(editorController: self)
+        }
+    }
+    
+    
     
 }

@@ -12,7 +12,7 @@ import Cocoa
 class CodeDocument: NSDocument {
     
     var codeContent: CodeContent = CodeContent()
-    var contentViewController: CodeViewController!
+    var contentViewController: EditorViewController!
 
     override init() {
         super.init()
@@ -29,19 +29,26 @@ class CodeDocument: NSDocument {
         
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier:
-          NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+        let windowController = storyboard.instantiateController(
+                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")
+            ) as! NSWindowController
 
-        guard let viewController = windowController.contentViewController as? CodeViewController else {
+        guard let viewController = windowController.contentViewController as? EditorViewController else {
             fatalError("failed to get content view controller from document")
         }
 
-        viewController.representedObject = codeContent
+        viewController.representedObject = self
         self.contentViewController = viewController
-
+        
         self.addWindowController(windowController)
+    }
 
-
+    override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
+        if (typeName == "public.folder") {
+            Swift.print("Opening project folder (CodeDocument)")
+        } else {
+            try super.read(from: fileWrapper, ofType: typeName)
+        }
     }
 
     override func data(ofType typeName: String) throws -> Data {

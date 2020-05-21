@@ -16,11 +16,14 @@
 		3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430862A247484A000675B1A /* CodeDocumentController.swift */; };
 		345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */; };
 		345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714524753F5D00E47D23 /* EditorViewController.swift */; };
-		345A714C2475408100E47D23 /* ProjectOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714A2475408100E47D23 /* ProjectOutlineViewController.swift */; };
+		345A714C2475408100E47D23 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714A2475408100E47D23 /* ProjectViewController.swift */; };
 		345A7154247544D600E47D23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345A7153247544D600E47D23 /* Main.storyboard */; };
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
+		34CF88432476CF720031D819 /* BonsaiWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* BonsaiWindowController.swift */; };
+		34CF88452476EB630031D819 /* ProjectViewController+OutlineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineDataSource.swift */; };
+		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +60,14 @@
 		3430862A247484A000675B1A /* CodeDocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentController.swift; sourceTree = "<group>"; };
 		345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeTextGutter+LineNumbers.swift"; sourceTree = "<group>"; };
 		345A714524753F5D00E47D23 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
-		345A714A2475408100E47D23 /* ProjectOutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOutlineViewController.swift; sourceTree = "<group>"; };
+		345A714A2475408100E47D23 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		345A7153247544D600E47D23 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
+		34CF88422476CF720031D819 /* BonsaiWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonsaiWindowController.swift; sourceTree = "<group>"; };
+		34CF88442476EB630031D819 /* ProjectViewController+OutlineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineDataSource.swift"; sourceTree = "<group>"; };
+		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				345A714E2475408F00E47D23 /* Views */,
 				346881AD24752EEB007AF5C6 /* Document */,
 				343085FC2474838C00675B1A /* AppDelegate.swift */,
+				34CF88422476CF720031D819 /* BonsaiWindowController.swift */,
 				345A7153247544D600E47D23 /* Main.storyboard */,
 				343086022474838E00675B1A /* Assets.xcassets */,
 				343086072474838E00675B1A /* Info.plist */,
@@ -149,12 +156,14 @@
 			path = Editor;
 			sourceTree = "<group>";
 		};
-		345A71492475401F00E47D23 /* ProjectOutline */ = {
+		345A71492475401F00E47D23 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				345A714A2475408100E47D23 /* ProjectOutlineViewController.swift */,
+				345A714A2475408100E47D23 /* ProjectViewController.swift */,
+				34CF88442476EB630031D819 /* ProjectViewController+OutlineDataSource.swift */,
+				34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */,
 			);
-			path = ProjectOutline;
+			path = Project;
 			sourceTree = "<group>";
 		};
 		345A714E2475408F00E47D23 /* Views */ = {
@@ -162,7 +171,7 @@
 			children = (
 				346881AC24752ECD007AF5C6 /* Code */,
 				345A714424753F3D00E47D23 /* Editor */,
-				345A71492475401F00E47D23 /* ProjectOutline */,
+				345A71492475401F00E47D23 /* Project */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,14 +337,17 @@
 			files = (
 				346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */,
 				345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */,
+				34CF88432476CF720031D819 /* BonsaiWindowController.swift in Sources */,
 				343085FF2474838C00675B1A /* CodeViewController.swift in Sources */,
 				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,
+				34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */,
 				346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */,
 				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
 				3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */,
+				34CF88452476EB630031D819 /* ProjectViewController+OutlineDataSource.swift in Sources */,
 				3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */,
 				343086012474838C00675B1A /* CodeDocument.swift in Sources */,
-				345A714C2475408100E47D23 /* ProjectOutlineViewController.swift in Sources */,
+				345A714C2475408100E47D23 /* ProjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

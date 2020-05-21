@@ -10,16 +10,36 @@ import Cocoa
 
 class CodeDocumentController: NSDocumentController {
     
-    override var documentClassNames: [String] {
-        return ["CodeDocument"]
+    var shared: Self {
+        get {
+            return NSDocumentController.shared as! Self
+        }
     }
     
-    override var defaultType: String? {
-        return "CodeDocument"
+    override func runModalOpenPanel(_ openPanel: NSOpenPanel, forTypes types: [String]?) -> Int {
+        print("Run modal open panel \(kUTTypeFolder)")
+        openPanel.canChooseDirectories = true
+        return super.runModalOpenPanel(openPanel, forTypes: types)
     }
     
-    override func documentClass(forType typeName: String) -> AnyClass? {
-        return CodeDocument.self
+    override func openDocument(withContentsOf url: URL, display displayDocument: Bool, completionHandler: @escaping (NSDocument?, Bool, Error?) -> Void) {
+        
+        if url.hasDirectoryPath {
+            print("Open project directory \(url)")
+            let document = CodeDocument()
+            document.makeWindowControllers()
+            
+            guard let windowController = document.windowControllers.first as? BonsaiWindowController else {
+                fatalError("Document window controller not found")
+            }
+            
+            windowController.showWindow(self)
+            windowController.editorController.projectController.projectDirectory = url
+            
+        } else {
+            super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
+        }
     }
+    
     
 }
