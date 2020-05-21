@@ -8,11 +8,11 @@
 
 import Cocoa
 
-@objc(CodeDocument)
+//@objc(CodeDocument)
 class CodeDocument: NSDocument {
     
     var codeContent: CodeContent = CodeContent()
-    var contentViewController: ContentViewController!
+    var contentViewController: CodeViewController!
 
     override init() {
         super.init()
@@ -25,15 +25,14 @@ class CodeDocument: NSDocument {
 
     override func makeWindowControllers() {
         
-        // Returns the Storyboard that contains your Document window.
-//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-//        let windowController = storyboard.instantiateController(withIdentifier:
-//          NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+        Swift.print("Make window controller")
         
-        let windowController = NSWindowController(windowNibName: NSNib.Name("MainWindow"))
-        windowController.contentViewController = ContentViewController(nibName: NSNib.Name("ContentView"), bundle: Bundle.main)
+        // Returns the Storyboard that contains your Document window.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        let windowController = storyboard.instantiateController(withIdentifier:
+          NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
 
-        guard let viewController = windowController.contentViewController as? ContentViewController else {
+        guard let viewController = windowController.contentViewController as? CodeViewController else {
             fatalError("failed to get content view controller from document")
         }
 

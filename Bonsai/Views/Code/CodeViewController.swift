@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ContentViewController: NSViewController {
+class CodeViewController: NSViewController {
 
     var documentContent: CodeContent? {
         get {
@@ -16,20 +16,32 @@ class ContentViewController: NSViewController {
         }
     }
     
-    @IBOutlet var textView: NSTextView!
+    @IBOutlet var textView: CodeTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.string = documentContent!.contentString
+        textView.setup()
         
-        // Do any additional setup after loading the view.
+        updateDocumentContent()
     }
 
     override var representedObject: Any? {
         didSet {
-            // Document content changed
+            updateDocumentContent()
         }
+    }
+    
+    func updateDocumentContent() {
+        if textView == nil {
+            return
+        }
+        
+        guard let documentContent = documentContent else {
+            return
+        }
+        
+        textView.string = documentContent.contentString
     }
 
 }

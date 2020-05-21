@@ -12,8 +12,7 @@ class CodeTextView: NSTextView {
     
     var gutterView: CodeTextGutter!
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    func setup() {
         self.textContainerInset = NSSize(width: 0, height: 10)
         registerLineNumbers()
     }

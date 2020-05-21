@@ -6,8 +6,6 @@
 //  Copyright © 2020 viktorstrate. All rights reserved.
 //
 
-// Class based on https://github.com/yichizhang/NSTextView-LineNumberView
-
 import Cocoa
 
 class CodeTextGutter: NSRulerView {

@@ -8,6 +8,8 @@
 
 import Cocoa
 
+// Based on https://github.com/yichizhang/NSTextView-LineNumberView
+
 extension CodeTextGutter {
     func drawLineNumbers(in rect: NSRect) {
         guard let textView = self.clientView as? NSTextView else {
