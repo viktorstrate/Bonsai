@@ -32,19 +32,6 @@ class EditorViewController: NSSplitViewController {
         projectController.editorSetup(editorController: self)
     }
     
-    var document: CodeDocument? {
-        get {
-            return representedObject as? CodeDocument
-        }
-    }
-    
-    override var representedObject: Any? {
-        didSet {
-            codeController.editorSetup(editorController: self)
-            projectController.editorSetup(editorController: self)
-        }
-    }
-    
-    
+    var document: CodeDocument?
     
 }

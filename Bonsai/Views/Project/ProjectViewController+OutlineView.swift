@@ -58,4 +58,17 @@ extension ProjectViewController: NSOutlineViewDataSource, NSOutlineViewDelegate 
         return fileItem.subItems != nil || fileItem.url.hasDirectoryPath
     }
     
+    @objc func outlineViewDidClick(_ sender: Any) {
+        let row = projectOutlineView.selectedRow
+        if row == -1 {
+            return
+        }
+        
+        guard let item = projectOutlineView.item(atRow: row) as? ProjectFileItem else {
+            return
+        }
+        
+        //CodeDocumentController.shared.openDocument(withContentsOf: item.url, display: true, completionHandler: ({ _, _, _ in }))
+    }
+    
 }

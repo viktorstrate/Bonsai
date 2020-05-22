@@ -23,23 +23,29 @@ class CodeDocumentController: NSDocumentController {
     }
     
     override func openDocument(withContentsOf url: URL, display displayDocument: Bool, completionHandler: @escaping (NSDocument?, Bool, Error?) -> Void) {
-        
+        print("openDocument")
+
         if url.hasDirectoryPath {
             print("Open project directory \(url)")
-            let document = CodeDocument()
-            document.makeWindowControllers()
-            
-            guard let windowController = document.windowControllers.first as? BonsaiWindowController else {
-                fatalError("Document window controller not found")
+
+            guard let document = try? super.openUntitledDocumentAndDisplay(displayDocument) else {
+                completionHandler(nil, false, DocumentControllerError.openDocument)
+                return
             }
             
-            windowController.showWindow(self)
-            windowController.editorController.projectController.projectDirectory = url
+            if let editorController = documents.last?.windowControllers.first?.contentViewController as? EditorViewController {
+                editorController.projectController.projectDirectory = url
+            }
             
-        } else {
+            completionHandler(document, false, nil)
+
+        } else {            
             super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
         }
     }
     
+    enum DocumentControllerError: Error {
+        case openDocument
+    }
     
 }

@@ -30,6 +30,7 @@ class ProjectViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         projectOutlineView.rowHeight = 18
+        projectOutlineView.action = #selector(outlineViewDidClick)
     }
     
     private func loadProjectFiles() {
