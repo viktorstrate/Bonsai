@@ -10,14 +10,14 @@ import Cocoa
 
 class CodeDocumentController: NSDocumentController {
     
-    var shared: Self {
+    static override var shared: Self {
         get {
             return NSDocumentController.shared as! Self
         }
     }
     
     override func runModalOpenPanel(_ openPanel: NSOpenPanel, forTypes types: [String]?) -> Int {
-        print("Run modal open panel \(kUTTypeFolder)")
+        print("Run modal open panel")
         openPanel.canChooseDirectories = true
         return super.runModalOpenPanel(openPanel, forTypes: types)
     }
@@ -43,6 +43,16 @@ class CodeDocumentController: NSDocumentController {
             super.openDocument(withContentsOf: url, display: displayDocument, completionHandler: completionHandler)
         }
     }
+    
+//    func openDocument(window: CodeDocumentWindow, withContentsOf url: URL) {
+//        guard let document = try? CodeDocument(contentsOf: url, ofType: "public.text") else {
+//            print("Could not open document")
+//            return
+//        }
+//        
+//        self.addDocument(document)
+//        window.addDocument(document)
+//    }
     
     enum DocumentControllerError: Error {
         case openDocument

@@ -29,7 +29,17 @@ class CodeDocumentWindow: NSWindowController, NSWindowDelegate {
         }
         
         document.removeWindowController(self)
+        CodeDocumentController.shared.removeDocument(document)
         documents.remove(document)
+    }
+    
+    func openDocument(url: URL) {
+        guard let document = try? CodeDocument(contentsOf: url, ofType: "public.text") else {
+            print("Could not open document")
+            return
+        }
+        
+        addDocument(document)
     }
     
     override func windowDidLoad() {

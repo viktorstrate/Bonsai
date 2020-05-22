@@ -68,6 +68,13 @@ extension ProjectViewController: NSOutlineViewDataSource, NSOutlineViewDelegate 
             return
         }
         
+        guard let documentWindow = self.view.window?.windowController as? CodeDocumentWindow else {
+            print("Could not get window as CodeDocumentWindow")
+            return
+        }
+        
+        documentWindow.openDocument(url: item.url)
+        
         //CodeDocumentController.shared.openDocument(withContentsOf: item.url, display: true, completionHandler: ({ _, _, _ in }))
     }
     
