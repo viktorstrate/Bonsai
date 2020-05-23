@@ -16,9 +16,9 @@ class EditorViewController: NSSplitViewController {
         }
     }
     
-    var codeController: CodeViewController {
+    var panelController: PanelLayoutController {
         get {
-            return self.splitViewItems[1].viewController as! CodeViewController
+            return self.splitViewItems[1].viewController as! PanelLayoutController
         }
     }
     
@@ -28,7 +28,7 @@ class EditorViewController: NSSplitViewController {
     }
     
     func documentSetup() {
-        codeController.editorSetup(editorController: self)
+        panelController.editorSetup(editorController: self)
         projectController.editorSetup(editorController: self)
     }
     

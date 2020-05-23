@@ -14,28 +14,27 @@ class CodeViewController: NSViewController {
     
     private weak var editorController: EditorViewController!
     
-    func editorSetup(editorController: EditorViewController) {
-        self.editorController = editorController
-        updateDocumentContent()
-    }
+//    func editorSetup(editorController: EditorViewController) {
+//        self.editorController = editorController
+//        updateDocumentContent()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         textView.setup()
     }
     
-    func updateDocumentContent() {
-        if textView == nil {
-            return
-        }
-        
-        guard let documentContent = editorController.document?.codeContent else {
-            return
-        }
-        
-        textView.string = documentContent.contentString
-    }
+//    func updateDocumentContent() {
+//        if textView == nil {
+//            return
+//        }
+//        
+//        guard let documentContent = editorController.document?.codeContent else {
+//            return
+//        }
+//        
+//        textView.string = documentContent.contentString
+//    }
 
 }
 

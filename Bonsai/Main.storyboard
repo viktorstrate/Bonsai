@@ -829,55 +829,18 @@
             </objects>
             <point key="canvasLocation" x="-233" y="1096"/>
         </scene>
-        <!--Code View Controller-->
+        <!--Panel Layout Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="5gI-5U-AMq" customClass="CodeViewController" customModule="Bonsai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5gI-5U-AMq" customClass="PanelLayoutController" customModule="Bonsai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="men-MY-L8a">
-                                <rect key="frame" x="0.0" y="0.0" width="447" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="ihD-7o-giZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="447" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="lDn-5w-Gbn" customClass="CodeTextView" customModule="Bonsai" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="447" height="300"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="447" height="300"/>
-                                            <size key="maxSize" width="480" height="10000000"/>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ZqS-CO-9aD">
-                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="wVA-T7-yKW">
-                                    <rect key="frame" x="431" y="0.0" width="16" height="300"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="men-MY-L8a" secondAttribute="trailing" id="8Kg-ik-hyD"/>
-                            <constraint firstItem="men-MY-L8a" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="JGK-UA-KBv"/>
-                            <constraint firstItem="men-MY-L8a" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="Rfo-f3-gHw"/>
-                            <constraint firstAttribute="bottom" secondItem="men-MY-L8a" secondAttribute="bottom" id="tOF-oJ-2VG"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="lDn-5w-Gbn" id="wWc-Ia-M31"/>
-                    </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="1096"/>
+            <point key="canvasLocation" x="141" y="1096"/>
         </scene>
     </scenes>
     <resources>

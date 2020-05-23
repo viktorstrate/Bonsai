@@ -24,6 +24,13 @@
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
+		34CF884A247815860031D819 /* PanelLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8849247815860031D819 /* PanelLayoutController.swift */; };
+		34CF884F247819B50031D819 /* NSView+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF884E247819B50031D819 /* NSView+layout.swift */; };
+		34CF8853247822130031D819 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CF8852247822130031D819 /* CodeViewController.xib */; };
+		34CF8857247823AA0031D819 /* PanelLayoutPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8856247823AA0031D819 /* PanelLayoutPane.swift */; };
+		34CF8859247826830031D819 /* PanelTabsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8858247826830031D819 /* PanelTabsControl.swift */; };
+		34CF885B24785B950031D819 /* PanelTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF885A24785B950031D819 /* PanelTabButton.swift */; };
+		34CF885D247928140031D819 /* PanelTabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF885C247928140031D819 /* PanelTabButtonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,19 @@
 			remoteInfo = Bonsai;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		34CF88622479286F0031D819 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		343085F92474838C00675B1A /* Bonsai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bonsai.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +88,13 @@
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
+		34CF8849247815860031D819 /* PanelLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelLayoutController.swift; sourceTree = "<group>"; };
+		34CF884E247819B50031D819 /* NSView+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+layout.swift"; sourceTree = "<group>"; };
+		34CF8852247822130031D819 /* CodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
+		34CF8856247823AA0031D819 /* PanelLayoutPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelLayoutPane.swift; sourceTree = "<group>"; };
+		34CF8858247826830031D819 /* PanelTabsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTabsControl.swift; sourceTree = "<group>"; };
+		34CF885A24785B950031D819 /* PanelTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTabButton.swift; sourceTree = "<group>"; };
+		34CF885C247928140031D819 /* PanelTabButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTabButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +145,7 @@
 		343085FB2474838C00675B1A /* Bonsai */ = {
 			isa = PBXGroup;
 			children = (
+				34CF884D247819A30031D819 /* Extensions */,
 				345A714E2475408F00E47D23 /* Views */,
 				346881AD24752EEB007AF5C6 /* Document */,
 				343085FC2474838C00675B1A /* AppDelegate.swift */,
@@ -168,6 +196,7 @@
 		345A714E2475408F00E47D23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34CF8848247814680031D819 /* PanelLayout */,
 				346881AC24752ECD007AF5C6 /* Code */,
 				345A714424753F3D00E47D23 /* Editor */,
 				345A71492475401F00E47D23 /* Project */,
@@ -180,6 +209,7 @@
 			children = (
 				346881B024752F54007AF5C6 /* CodeTextView */,
 				343085FE2474838C00675B1A /* CodeViewController.swift */,
+				34CF8852247822130031D819 /* CodeViewController.xib */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -205,6 +235,26 @@
 			path = CodeTextView;
 			sourceTree = "<group>";
 		};
+		34CF8848247814680031D819 /* PanelLayout */ = {
+			isa = PBXGroup;
+			children = (
+				34CF8849247815860031D819 /* PanelLayoutController.swift */,
+				34CF8856247823AA0031D819 /* PanelLayoutPane.swift */,
+				34CF8858247826830031D819 /* PanelTabsControl.swift */,
+				34CF885A24785B950031D819 /* PanelTabButton.swift */,
+				34CF885C247928140031D819 /* PanelTabButtonCell.swift */,
+			);
+			path = PanelLayout;
+			sourceTree = "<group>";
+		};
+		34CF884D247819A30031D819 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34CF884E247819B50031D819 /* NSView+layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,12 +265,15 @@
 				343085F52474838C00675B1A /* Sources */,
 				343085F62474838C00675B1A /* Frameworks */,
 				343085F72474838C00675B1A /* Resources */,
+				34CF88622479286F0031D819 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Bonsai;
+			packageProductDependencies = (
+			);
 			productName = Bonsai;
 			productReference = 343085F92474838C00675B1A /* Bonsai.app */;
 			productType = "com.apple.product-type.application";
@@ -293,6 +346,8 @@
 				Base,
 			);
 			mainGroup = 343085F02474838C00675B1A;
+			packageReferences = (
+			);
 			productRefGroup = 343085FA2474838C00675B1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,6 +366,7 @@
 			files = (
 				343086032474838E00675B1A /* Assets.xcassets in Resources */,
 				345A7154247544D600E47D23 /* Main.storyboard in Resources */,
+				34CF8853247822130031D819 /* CodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +393,13 @@
 			files = (
 				346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */,
 				345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */,
+				34CF8857247823AA0031D819 /* PanelLayoutPane.swift in Sources */,
+				34CF8859247826830031D819 /* PanelTabsControl.swift in Sources */,
+				34CF884A247815860031D819 /* PanelLayoutController.swift in Sources */,
 				34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */,
+				34CF884F247819B50031D819 /* NSView+layout.swift in Sources */,
 				343085FF2474838C00675B1A /* CodeViewController.swift in Sources */,
+				34CF885B24785B950031D819 /* PanelTabButton.swift in Sources */,
 				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,
 				34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */,
 				346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */,
@@ -347,6 +408,7 @@
 				34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */,
 				3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */,
 				343086012474838C00675B1A /* CodeDocument.swift in Sources */,
+				34CF885D247928140031D819 /* PanelTabButtonCell.swift in Sources */,
 				345A714C2475408100E47D23 /* ProjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
