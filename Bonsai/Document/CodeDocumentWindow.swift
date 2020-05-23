@@ -21,6 +21,7 @@ class CodeDocumentWindow: NSWindowController, NSWindowDelegate {
     func addDocument(_ document: CodeDocument) {
         documents.insert(document)
         document.addWindowController(self)
+        editorController.panelController.addDocument(document)
     }
     
     func removeDocument(_ document: CodeDocument) {

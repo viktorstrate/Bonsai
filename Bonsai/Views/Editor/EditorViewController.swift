@@ -32,6 +32,4 @@ class EditorViewController: NSSplitViewController {
         projectController.editorSetup(editorController: self)
     }
     
-    var document: CodeDocument?
-    
 }

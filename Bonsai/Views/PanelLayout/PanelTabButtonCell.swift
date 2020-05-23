@@ -36,10 +36,10 @@ class PanelTabButtonCell: NSButtonCell {
     }
     
     override func draw(withFrame frame: NSRect, in controlView: NSView) {
-        if !isHighlighted {
-            NSColor(calibratedWhite: 0.9, alpha: 1).setFill()
-        } else {
+        if isHighlighted || button.activeTab {
             NSColor.white.setFill()
+        } else {
+            NSColor(calibratedWhite: 0.9, alpha: 1).setFill()
         }
         
         frame.fill()
@@ -48,8 +48,10 @@ class PanelTabButtonCell: NSButtonCell {
         NSRect(x: frame.maxX-1, y: frame.minY, width: 1, height: frame.height).fill()
         
         // Top highlight
-        NSColor.red.setFill()
-        NSRect(x: frame.minX, y: frame.minY, width: frame.width, height: 2).fill()
+        if button.activeTab {
+            NSColor.red.setFill()
+            NSRect(x: frame.minX, y: frame.minY, width: frame.width, height: 2).fill()
+        }
         
         var titleAttrs: [NSAttributedString.Key: Any] = [:]
         
@@ -67,7 +69,6 @@ class PanelTabButtonCell: NSButtonCell {
     }
     
     override func cellSize(forBounds rect: NSRect) -> NSSize {
-        print("cellSize \(button.frame.width) \(button.frame.height)")
         return NSSize(width: button.frame.width, height: button.frame.height)
     }
     

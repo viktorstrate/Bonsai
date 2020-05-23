@@ -44,16 +44,6 @@ class CodeDocumentController: NSDocumentController {
         }
     }
     
-//    func openDocument(window: CodeDocumentWindow, withContentsOf url: URL) {
-//        guard let document = try? CodeDocument(contentsOf: url, ofType: "public.text") else {
-//            print("Could not open document")
-//            return
-//        }
-//        
-//        self.addDocument(document)
-//        window.addDocument(document)
-//    }
-    
     enum DocumentControllerError: Error {
         case openDocument
     }

@@ -38,7 +38,6 @@ class CodeDocument: NSDocument {
             fatalError("failed to get content view controller from document")
         }
 
-        viewController.document = self
         self.contentViewController = viewController
         
         self.addWindowController(windowController)
