@@ -45,7 +45,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
         
         for codeController in layoutPane.codeControllers {
             
-            let document = codeController.document!
+            let document = codeController.document
             
             let activeDocument = document == layoutPane.activeDocument
             
@@ -85,6 +85,6 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
         }
         
 //        layoutPane.removeDocument(codeController.document!)
-        layoutPane.activeDocument = codeController.document!
+        layoutPane.activeDocument = codeController.document
     }
 }

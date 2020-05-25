@@ -21,12 +21,12 @@
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
+		34B63698247C2587000657AB /* CodeTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B63697247C2587000657AB /* CodeTextStorage.swift */; };
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
 		34CF884A247815860031D819 /* PanelLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8849247815860031D819 /* PanelLayoutController.swift */; };
 		34CF884F247819B50031D819 /* NSView+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF884E247819B50031D819 /* NSView+layout.swift */; };
-		34CF8853247822130031D819 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CF8852247822130031D819 /* CodeViewController.xib */; };
 		34CF8857247823AA0031D819 /* PanelLayoutPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8856247823AA0031D819 /* PanelLayoutPane.swift */; };
 		34CF8859247826830031D819 /* PanelTabsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8858247826830031D819 /* PanelTabsControl.swift */; };
 		34CF885B24785B950031D819 /* PanelTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF885A24785B950031D819 /* PanelTabButton.swift */; };
@@ -85,12 +85,12 @@
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
+		34B63697247C2587000657AB /* CodeTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextStorage.swift; sourceTree = "<group>"; };
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
 		34CF8849247815860031D819 /* PanelLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelLayoutController.swift; sourceTree = "<group>"; };
 		34CF884E247819B50031D819 /* NSView+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+layout.swift"; sourceTree = "<group>"; };
-		34CF8852247822130031D819 /* CodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
 		34CF8856247823AA0031D819 /* PanelLayoutPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelLayoutPane.swift; sourceTree = "<group>"; };
 		34CF8858247826830031D819 /* PanelTabsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTabsControl.swift; sourceTree = "<group>"; };
 		34CF885A24785B950031D819 /* PanelTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTabButton.swift; sourceTree = "<group>"; };
@@ -209,7 +209,6 @@
 			children = (
 				346881B024752F54007AF5C6 /* CodeTextView */,
 				343085FE2474838C00675B1A /* CodeViewController.swift */,
-				34CF8852247822130031D819 /* CodeViewController.xib */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				346881AE24752F01007AF5C6 /* CodeTextView.swift */,
+				34B63697247C2587000657AB /* CodeTextStorage.swift */,
 				346881B124752F6E007AF5C6 /* CodeTextGutter.swift */,
 				345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */,
 			);
@@ -321,7 +321,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = viktorstrate;
 				TargetAttributes = {
 					343085F82474838C00675B1A = {
@@ -366,7 +366,6 @@
 			files = (
 				343086032474838E00675B1A /* Assets.xcassets in Resources */,
 				345A7154247544D600E47D23 /* Main.storyboard in Resources */,
-				34CF8853247822130031D819 /* CodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +402,7 @@
 				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,
 				34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */,
 				346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */,
+				34B63698247C2587000657AB /* CodeTextStorage.swift in Sources */,
 				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
 				3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */,
 				34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */,
@@ -564,21 +564,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bonsai/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -591,21 +583,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bonsai/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

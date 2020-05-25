@@ -10,13 +10,40 @@ import Cocoa
 
 class CodeViewController: NSViewController {
     
-    @IBOutlet weak var textView: CodeTextView!
-    weak var document: CodeDocument!
+    var textView: CodeTextView!
+    let document: CodeDocument
+    
+    init(document: CodeDocument) {
+        self.document = document
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func loadView() {
+        super.view = NSView()
+        
+        let textScrollView = NSScrollView()
+        
+        textView = CodeTextView(document: document)
+        
+        textScrollView.hasVerticalScroller = true
+        textScrollView.horizontalScrollElasticity = .none
+        textScrollView.borderType = .noBorder
+        textScrollView.documentView = textView
+        
+        textView.layoutFill(inside: textScrollView.contentView)
+        
+        super.view.addSubview(textScrollView)
+        textScrollView.layoutFill(inside: super.view)
+        
+        textView.setupGutter()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.setup()
-        textView.string = document.codeContent.contentString
     }
     
     var isHidden: Bool = false {

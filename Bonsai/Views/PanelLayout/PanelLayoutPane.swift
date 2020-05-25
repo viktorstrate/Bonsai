@@ -40,8 +40,7 @@ class PanelLayoutPane: NSView {
     func addDocument(_ document: CodeDocument) {
         print("PanelLayoutPane add document")
         
-        let codeController = CodeViewController()
-        codeController.document = document
+        let codeController = CodeViewController(document: document)
         
         let codeView = codeController.view
         codeView.translatesAutoresizingMaskIntoConstraints = false

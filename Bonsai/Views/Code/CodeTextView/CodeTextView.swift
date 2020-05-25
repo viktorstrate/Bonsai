@@ -12,14 +12,26 @@ class CodeTextView: NSTextView {
     
     var gutterView: CodeTextGutter!
     
-    func setup() {
+    init(document: CodeDocument) {
+        let container = NSTextContainer()
+        
+        let layoutManager = NSLayoutManager()
+        layoutManager.addTextContainer(container)
+        
+        let textStorage = CodeTextStorage(document: document)
+        textStorage.addLayoutManager(layoutManager)
+        
+        super.init(frame: NSRect(), textContainer: container)
+        
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
-        
-        registerLineNumbers()
     }
     
-    func registerLineNumbers() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupGutter() {
         if let scrollView = enclosingScrollView {
             gutterView = CodeTextGutter(textView: self)
             

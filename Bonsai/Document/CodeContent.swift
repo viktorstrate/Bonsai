@@ -8,19 +8,19 @@
 
 import Foundation
 
-class CodeContent: ObservableObject {
-    @Published var contentString = ""
+class CodeContent {
+    var contentString: NSMutableAttributedString = NSMutableAttributedString()
     
     func read(data: Data) throws {
         guard let content = String(data: data, encoding: .utf8) else {
             throw CodeContentError.invalidEncoding
         }
         
-        self.contentString = content
+        self.contentString = NSMutableAttributedString(string: content)
     }
     
     func data() -> Data {
-        return contentString.data(using: .utf8)!
+        return contentString.string.data(using: .utf8)!
     }
     
     enum CodeContentError: Error {
