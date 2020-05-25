@@ -21,8 +21,6 @@
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
-		34B6366F247ADFC4000657AB /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */; };
-		34B63670247ADFC4000657AB /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
@@ -59,7 +57,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				34B63670247ADFC4000657AB /* SwiftTreeSitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +85,6 @@
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
-		34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTreeSitter.framework; path = Frameworks/SwiftTreeSitter.framework; sourceTree = "<group>"; };
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
@@ -120,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34B6366F247ADFC4000657AB /* SwiftTreeSitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +125,6 @@
 		343085F02474838C00675B1A = {
 			isa = PBXGroup;
 			children = (
-				34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */,
 				343085FB2474838C00675B1A /* Bonsai */,
 				343086102474838E00675B1A /* BonsaiTests */,
 				3430861B2474838E00675B1A /* BonsaiUITests */,

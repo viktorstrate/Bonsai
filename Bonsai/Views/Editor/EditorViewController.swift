@@ -25,11 +25,17 @@ class EditorViewController: NSSplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        splitViewItems[0].isCollapsed = true
     }
     
     func documentSetup() {
         panelController.editorSetup(editorController: self)
         projectController.editorSetup(editorController: self)
+    }
+    
+    func openProject(directory: URL) {
+        projectController.projectDirectory = directory
+        splitViewItems[0].isCollapsed = false
     }
     
 }

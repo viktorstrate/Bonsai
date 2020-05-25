@@ -34,7 +34,7 @@ class CodeDocumentController: NSDocumentController {
             }
             
             if let editorController = documents.last?.windowControllers.first?.contentViewController as? EditorViewController {
-                editorController.projectController.projectDirectory = url
+                editorController.openProject(directory: url)
             }
             
             completionHandler(document, false, nil)

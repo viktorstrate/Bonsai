@@ -30,8 +30,6 @@ class CodeTextGutter: NSRulerView {
     
     override func drawHashMarksAndLabels(in rect: NSRect) {
         
-        print("Drawing text gutter")
-        
         NSColor.white.setFill()
         rect.fill()
         
