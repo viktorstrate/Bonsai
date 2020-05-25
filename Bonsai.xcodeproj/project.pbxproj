@@ -21,6 +21,8 @@
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
+		34B6366F247ADFC4000657AB /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */; };
+		34B63670247ADFC4000657AB /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
@@ -51,12 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		34CF88622479286F0031D819 /* Embed Frameworks */ = {
+		34B63672247ADFC4000657AB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				34B63670247ADFC4000657AB /* SwiftTreeSitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +88,7 @@
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
+		34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTreeSitter.framework; path = Frameworks/SwiftTreeSitter.framework; sourceTree = "<group>"; };
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
@@ -98,13 +102,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		343085F62474838C00675B1A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3430860A2474838E00675B1A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,12 +116,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34B63671247ADFC4000657AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B6366F247ADFC4000657AB /* SwiftTreeSitter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		343085F02474838C00675B1A = {
 			isa = PBXGroup;
 			children = (
+				34B6366E247ADFC4000657AB /* SwiftTreeSitter.framework */,
 				343085FB2474838C00675B1A /* Bonsai */,
 				343086102474838E00675B1A /* BonsaiTests */,
 				3430861B2474838E00675B1A /* BonsaiUITests */,
@@ -263,9 +269,9 @@
 			buildConfigurationList = 343086212474838E00675B1A /* Build configuration list for PBXNativeTarget "Bonsai" */;
 			buildPhases = (
 				343085F52474838C00675B1A /* Sources */,
-				343085F62474838C00675B1A /* Frameworks */,
 				343085F72474838C00675B1A /* Resources */,
-				34CF88622479286F0031D819 /* Embed Frameworks */,
+				34B63671247ADFC4000657AB /* Frameworks */,
+				34B63672247ADFC4000657AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,7 +326,7 @@
 		343085F12474838C00675B1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = viktorstrate;
 				TargetAttributes = {
@@ -561,14 +567,23 @@
 		343086222474838E00675B1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Bonsai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,14 +594,23 @@
 		343086232474838E00675B1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Bonsai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";

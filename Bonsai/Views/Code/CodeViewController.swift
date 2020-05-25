@@ -11,12 +11,22 @@ import Cocoa
 class CodeViewController: NSViewController {
     
     @IBOutlet weak var textView: CodeTextView!
-    
-    private weak var editorController: EditorViewController!
+    weak var document: CodeDocument!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.setup()
+        textView.string = document.codeContent.contentString
+    }
+    
+    var isHidden: Bool = false {
+        didSet {
+            self.view.isHidden = isHidden
+            
+            if isHidden == false {
+                textView.gutterView.needsDisplay = true
+            }
+        }
     }
 
 }

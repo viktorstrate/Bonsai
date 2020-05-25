@@ -14,13 +14,18 @@ class PanelLayoutPane: NSView {
     var activeDocument: CodeDocument? {
         didSet {
             delegate?.layoutPane(self, activeDocumentChanged: activeDocument)
+            
+            for controller in codeControllers {
+                controller.isHidden = controller.document != activeDocument
+            }
+            
             tabsControl.layoutTabs()
         }
     }
     
     var delegate: PanelLayoutPaneDelegate?
     
-    var documents: Set<CodeDocument> = Set()
+    var codeControllers: Set<CodeViewController> = Set()
     var tabsControl: PanelTabsControl!
 
     init() {
@@ -34,17 +39,38 @@ class PanelLayoutPane: NSView {
     
     func addDocument(_ document: CodeDocument) {
         print("PanelLayoutPane add document")
-        documents.insert(document)
+        
+        let codeController = CodeViewController()
+        codeController.document = document
+        
+        let codeView = codeController.view
+        codeView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.addSubview(codeView)
+        codeView.topAnchor.constraint(equalTo: tabsControl.bottomAnchor).isActive = true
+        codeView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        codeView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        codeView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        
+        codeControllers.insert(codeController)
+        
         activeDocument = document
         tabsControl.layoutTabs()
     }
     
     func removeDocument(_ document: CodeDocument) {
-        if !documents.contains(document) {
+        
+        guard let codeController = (codeControllers.first { $0.document == document }) else {
+            print("could not remove document, document was not found")
             return
         }
         
-        documents.remove(document)
+        codeController.removeFromParent()
+        codeController.view.removeFromSuperview()
+        
+        codeControllers.remove(codeController)
+        tabsControl.layoutTabs()
     }
     
     fileprivate func setup() {
@@ -62,16 +88,6 @@ class PanelLayoutPane: NSView {
         tabsControl.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         tabsControl.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         tabsControl.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        let codeController = CodeViewController()
-        let codeView = codeController.view
-        codeView.translatesAutoresizingMaskIntoConstraints = false
-
-        self.addSubview(codeView)
-        codeView.topAnchor.constraint(equalTo: tabsControl.bottomAnchor).isActive = true
-        codeView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        codeView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        codeView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
 }

@@ -12,7 +12,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
     
     let layoutPane: PanelLayoutPane
     
-    private(set) var tabs: [CodeDocument: PanelTabButton] = [:]
+    private(set) var tabs: [CodeViewController: PanelTabButton] = [:]
     
     init(layoutPane: PanelLayoutPane) {
         self.layoutPane = layoutPane
@@ -30,18 +30,29 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
     }
     
     func layoutTabs() {
-        print("Layout tabs \(layoutPane.documents.count)")
+        print("Layout tabs \(layoutPane.codeControllers.count)")
         
         var offsetX = 0.0
         
-        for document in layoutPane.documents {
+        // Remove old tabs
+        tabs.keys
+            .filter { !layoutPane.codeControllers.contains($0) }
+            .forEach {
+                print("Removing tab")
+                tabs[$0]?.removeFromSuperview()
+                tabs.removeValue(forKey: $0)
+            }
+        
+        for codeController in layoutPane.codeControllers {
+            
+            let document = codeController.document!
             
             let activeDocument = document == layoutPane.activeDocument
             
             let tabFrame = NSRect(x: offsetX, y: 0, width: 100, height: 24)
             offsetX += 100
             
-            let tab = tabs[document] ?? { () -> PanelTabButton in
+            let tab = tabs[codeController] ?? { () -> PanelTabButton in
                 let tab = PanelTabButton()
                 print("Making new tab")
 
@@ -49,7 +60,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
                 tab.translatesAutoresizingMaskIntoConstraints = false
                 tab.delegate = self
                 
-                tabs[document] = tab
+                tabs[codeController] = tab
                 
                 return tab
             }()
@@ -68,11 +79,12 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
     
     func tabClicked(tab: PanelTabButton) {
         
-        guard let document = tabs.first(where: { tab == $1 })?.key else {
+        guard let codeController = tabs.first(where: { tab == $1 })?.key else {
             print("Didn't find document")
             return
         }
         
-        layoutPane.activeDocument = document
+//        layoutPane.removeDocument(codeController.document!)
+        layoutPane.activeDocument = codeController.document!
     }
 }
