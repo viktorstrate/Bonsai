@@ -1,16 +1,15 @@
 //
-//  ViewController.swift
+//  CodeViewController.swift
 //  Bonsai
 //
-//  Created by Viktor Strate Kløvedal on 19/05/2020.
+//  Created by Viktor Strate Kløvedal on 27/05/2020.
 //  Copyright © 2020 viktorstrate. All rights reserved.
-//
 
 import Cocoa
 
 class CodeViewController: NSViewController {
     
-    var textView: CodeTextView!
+    @IBOutlet weak var textView: CodeTextView!
     let document: CodeDocument
     
     init(document: CodeDocument) {
@@ -18,24 +17,8 @@ class CodeViewController: NSViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func loadView() {
-        super.view = NSView()
-        
-        let textScrollView = NSScrollView()
-        
-        textView = CodeTextView(document: document)
-        
-        textScrollView.hasVerticalScroller = true
-        textScrollView.horizontalScrollElasticity = .none
-        textScrollView.borderType = .noBorder
-        textScrollView.documentView = textView
-        
-        textView.layoutFill(inside: textScrollView.contentView)
-        
-        super.view.addSubview(textScrollView)
-        textScrollView.layoutFill(inside: super.view)
-        
-        textView.setupGutter()
+    override func viewDidLayout() {
+        textView.setup(document: document)
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +34,7 @@ class CodeViewController: NSViewController {
             self.view.isHidden = isHidden
             
             if isHidden == false {
-                textView.gutterView.needsDisplay = true
+                textView.gutterView?.needsDisplay = true
             }
         }
     }

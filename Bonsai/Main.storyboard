@@ -731,7 +731,7 @@
         <scene sceneID="2y8-EZ-NJp">
             <objects>
                 <viewController id="LJc-Gn-egB" customClass="ProjectViewController" customModule="Bonsai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="PwZ-Mj-Dpa">
+                    <view key="view" id="PwZ-Mj-Dpa">
                         <rect key="frame" x="0.0" y="0.0" width="236" height="304"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -767,13 +767,13 @@
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-uf-ZIb">
                                                                     <rect key="frame" x="0.0" y="15" width="16" height="16"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="16" id="a5p-Yv-C3j"/>
-                                                                        <constraint firstAttribute="width" secondItem="TM2-uf-ZIb" secondAttribute="height" multiplier="1:1" id="hjk-3I-pQq"/>
+                                                                        <constraint firstAttribute="width" constant="16" id="OVK-wd-0wM"/>
+                                                                        <constraint firstAttribute="height" constant="16" id="XTD-Gr-Vmv"/>
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSActionTemplate" id="ET3-QL-lSL"/>
                                                                 </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y6r-pe-swz">
-                                                                    <rect key="frame" x="16" y="16" width="219" height="15"/>
+                                                                    <rect key="frame" x="16" y="15" width="219" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="fw1-2B-gk7">
                                                                         <font key="font" metaFont="label" size="12"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -782,11 +782,12 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="centerY" secondItem="lEj-Pc-gP3" secondAttribute="centerY" id="J2n-Yq-Yuq"/>
-                                                                <constraint firstItem="Y6r-pe-swz" firstAttribute="leading" secondItem="TM2-uf-ZIb" secondAttribute="leading" constant="18" id="byL-Wy-k2q"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Y6r-pe-swz" secondAttribute="trailing" id="pFI-SV-Oiq"/>
-                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="leading" secondItem="lEj-Pc-gP3" secondAttribute="leading" id="qf4-kD-jDN"/>
-                                                                <constraint firstItem="Y6r-pe-swz" firstAttribute="centerY" secondItem="lEj-Pc-gP3" secondAttribute="centerY" id="sKT-Ul-SXw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Y6r-pe-swz" secondAttribute="trailing" id="9ek-V7-XLE"/>
+                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="centerY" secondItem="Y6r-pe-swz" secondAttribute="centerY" id="TAB-SA-syo"/>
+                                                                <constraint firstItem="Y6r-pe-swz" firstAttribute="leading" secondItem="TM2-uf-ZIb" secondAttribute="trailing" constant="2" id="U7d-lT-pPW"/>
+                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="top" secondItem="Y6r-pe-swz" secondAttribute="top" id="XZj-TF-FB9"/>
+                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="leading" secondItem="lEj-Pc-gP3" secondAttribute="leading" id="Y0Y-mG-t8d"/>
+                                                                <constraint firstItem="TM2-uf-ZIb" firstAttribute="centerY" secondItem="lEj-Pc-gP3" secondAttribute="centerY" id="cMf-LO-ycX"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="iconImageView" destination="TM2-uf-ZIb" id="ET6-UR-e0Z"/>
@@ -815,10 +816,10 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="OHS-gI-W2y" firstAttribute="leading" secondItem="PwZ-Mj-Dpa" secondAttribute="leading" id="1Sq-2G-DrK"/>
-                            <constraint firstAttribute="trailing" secondItem="OHS-gI-W2y" secondAttribute="trailing" id="3db-WD-kN5"/>
-                            <constraint firstItem="OHS-gI-W2y" firstAttribute="top" secondItem="PwZ-Mj-Dpa" secondAttribute="top" id="lSk-WF-hUU"/>
-                            <constraint firstAttribute="bottom" secondItem="OHS-gI-W2y" secondAttribute="bottom" id="yrx-7g-tb9"/>
+                            <constraint firstAttribute="bottom" secondItem="OHS-gI-W2y" secondAttribute="bottom" id="6F4-6N-lOI"/>
+                            <constraint firstItem="OHS-gI-W2y" firstAttribute="top" secondItem="PwZ-Mj-Dpa" secondAttribute="top" constant="-4" id="VSO-VU-bhn"/>
+                            <constraint firstItem="OHS-gI-W2y" firstAttribute="leading" secondItem="PwZ-Mj-Dpa" secondAttribute="leading" id="VU6-8W-7n0"/>
+                            <constraint firstAttribute="trailing" secondItem="OHS-gI-W2y" secondAttribute="trailing" id="jyk-uT-RHQ"/>
                         </constraints>
                     </view>
                     <connections>

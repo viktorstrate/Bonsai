@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3417849F247E6CCB00843085 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3417849D247E6CCB00843085 /* CodeViewController.swift */; };
+		341784A0247E6CCB00843085 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3417849E247E6CCB00843085 /* CodeViewController.xib */; };
+		341784A6247EB7EB00843085 /* CodeSyntaxTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784A5247EB7EB00843085 /* CodeSyntaxTree.swift */; };
+		341784A8247EE4F600843085 /* SyntaxTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784A7247EE4F600843085 /* SyntaxTreeTests.swift */; };
+		341784A9247EE82D00843085 /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; };
+		341784AA247EE82D00843085 /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		341784AE247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784AD247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift */; };
 		343085FD2474838C00675B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343085FC2474838C00675B1A /* AppDelegate.swift */; };
-		343085FF2474838C00675B1A /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343085FE2474838C00675B1A /* CodeViewController.swift */; };
 		343086012474838C00675B1A /* CodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086002474838C00675B1A /* CodeDocument.swift */; };
 		343086032474838E00675B1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343086022474838E00675B1A /* Assets.xcassets */; };
 		343086122474838E00675B1A /* BonsaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086112474838E00675B1A /* BonsaiTests.swift */; };
@@ -51,12 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		34B63672247ADFC4000657AB /* Embed Frameworks */ = {
+		341784AB247EE82D00843085 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				341784AA247EE82D00843085 /* SwiftTreeSitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,9 +71,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3417849D247E6CCB00843085 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		3417849E247E6CCB00843085 /* CodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
+		341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTreeSitter.framework; path = Bonsai/Libraries/SwiftTreeSitter.framework; sourceTree = "<group>"; };
+		341784A5247EB7EB00843085 /* CodeSyntaxTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSyntaxTree.swift; sourceTree = "<group>"; };
+		341784A7247EE4F600843085 /* SyntaxTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxTreeTests.swift; sourceTree = "<group>"; };
+		341784AD247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeSyntaxTree+InputEdit.swift"; sourceTree = "<group>"; };
 		343085F92474838C00675B1A /* Bonsai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bonsai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343085FC2474838C00675B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		343085FE2474838C00675B1A /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		343086002474838C00675B1A /* CodeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocument.swift; sourceTree = "<group>"; };
 		343086022474838E00675B1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		343086072474838E00675B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,12 +128,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341784A9247EE82D00843085 /* SwiftTreeSitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341784A1247EB7AA00843085 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		341784AC247F13B100843085 /* SyntaxTreeAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				341784A5247EB7EB00843085 /* CodeSyntaxTree.swift */,
+				341784AD247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift */,
+			);
+			path = SyntaxTreeAnalysis;
+			sourceTree = "<group>";
+		};
 		343085F02474838C00675B1A = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +159,7 @@
 				343086102474838E00675B1A /* BonsaiTests */,
 				3430861B2474838E00675B1A /* BonsaiUITests */,
 				343085FA2474838C00675B1A /* Products */,
+				341784A1247EB7AA00843085 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				343086112474838E00675B1A /* BonsaiTests.swift */,
+				341784A7247EE4F600843085 /* SyntaxTreeTests.swift */,
 				343086132474838E00675B1A /* Info.plist */,
 			);
 			path = BonsaiTests;
@@ -207,8 +239,10 @@
 		346881AC24752ECD007AF5C6 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				341784AC247F13B100843085 /* SyntaxTreeAnalysis */,
 				346881B024752F54007AF5C6 /* CodeTextView */,
-				343085FE2474838C00675B1A /* CodeViewController.swift */,
+				3417849D247E6CCB00843085 /* CodeViewController.swift */,
+				3417849E247E6CCB00843085 /* CodeViewController.xib */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -265,7 +299,7 @@
 				343085F52474838C00675B1A /* Sources */,
 				343085F72474838C00675B1A /* Resources */,
 				34B63671247ADFC4000657AB /* Frameworks */,
-				34B63672247ADFC4000657AB /* Embed Frameworks */,
+				341784AB247EE82D00843085 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,6 +400,7 @@
 			files = (
 				343086032474838E00675B1A /* Assets.xcassets in Resources */,
 				345A7154247544D600E47D23 /* Main.storyboard in Resources */,
+				341784A0247E6CCB00843085 /* CodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,16 +429,18 @@
 				345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */,
 				34CF8857247823AA0031D819 /* PanelLayoutPane.swift in Sources */,
 				34CF8859247826830031D819 /* PanelTabsControl.swift in Sources */,
+				341784AE247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift in Sources */,
 				34CF884A247815860031D819 /* PanelLayoutController.swift in Sources */,
 				34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */,
 				34CF884F247819B50031D819 /* NSView+layout.swift in Sources */,
-				343085FF2474838C00675B1A /* CodeViewController.swift in Sources */,
 				34CF885B24785B950031D819 /* PanelTabButton.swift in Sources */,
+				341784A6247EB7EB00843085 /* CodeSyntaxTree.swift in Sources */,
 				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,
 				34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */,
 				346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */,
 				34B63698247C2587000657AB /* CodeTextStorage.swift in Sources */,
 				343085FD2474838C00675B1A /* AppDelegate.swift in Sources */,
+				3417849F247E6CCB00843085 /* CodeViewController.swift in Sources */,
 				3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */,
 				34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */,
 				3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */,
@@ -417,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341784A8247EE4F600843085 /* SyntaxTreeTests.swift in Sources */,
 				343086122474838E00675B1A /* BonsaiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,15 +599,20 @@
 		343086222474838E00675B1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bonsai/Libraries",
+				);
 				INFOPLIST_FILE = Bonsai/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,15 +623,20 @@
 		343086232474838E00675B1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bonsai/Bonsai.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bonsai/Libraries",
+				);
 				INFOPLIST_FILE = Bonsai/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.viktorstrate.Bonsai;
 				PRODUCT_NAME = "$(TARGET_NAME)";

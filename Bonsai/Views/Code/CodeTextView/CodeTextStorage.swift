@@ -11,6 +11,7 @@ import Cocoa
 class CodeTextStorage: NSTextStorage {
     
     let document: CodeDocument
+    let syntaxTree: CodeSyntaxTree
     
     override var string: String {
         return document.codeContent.contentString.string
@@ -22,6 +23,7 @@ class CodeTextStorage: NSTextStorage {
     
     init(document: CodeDocument) {
         self.document = document
+        self.syntaxTree = CodeSyntaxTree(document: document)
         super.init()
     }
     
@@ -38,6 +40,9 @@ class CodeTextStorage: NSTextStorage {
     }
     
     override func replaceCharacters(in range: NSRange, with str: String) {
+        
+        let oldStr = (textContent.string as NSString).substring(with: range)
+        
         super.beginEditing()
         
         textContent.replaceCharacters(in: range, with: str)
@@ -48,6 +53,8 @@ class CodeTextStorage: NSTextStorage {
         )
         
         super.endEditing()
+        
+        syntaxTree.documentWasEdited(in: range, with: str, oldString: oldStr)
     }
     
     override func setAttributes(_ attrs: [NSAttributedString.Key : Any]?, range: NSRange) {

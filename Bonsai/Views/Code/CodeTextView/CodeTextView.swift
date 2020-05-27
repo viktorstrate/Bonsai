@@ -10,25 +10,17 @@ import Cocoa
 
 class CodeTextView: NSTextView {
     
-    var gutterView: CodeTextGutter!
+    var gutterView: CodeTextGutter?
     
-    init(document: CodeDocument) {
-        let container = NSTextContainer()
-        
-        let layoutManager = NSLayoutManager()
-        layoutManager.addTextContainer(container)
-        
+    func setup(document: CodeDocument) {
         let textStorage = CodeTextStorage(document: document)
-        textStorage.addLayoutManager(layoutManager)
-        
-        super.init(frame: NSRect(), textContainer: container)
+        self.layoutManager!.replaceTextStorage(textStorage)
         
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.allowsUndo = true
+        
+        setupGutter()
     }
     
     func setupGutter() {
@@ -47,7 +39,7 @@ class CodeTextView: NSTextView {
     }
     
     @objc func redrawGutter() {
-        gutterView.needsDisplay = true
+        gutterView?.needsDisplay = true
     }
     
 }
