@@ -13,7 +13,7 @@ class SyntaxTreeTests: XCTestCase {
     func testEditTree() {
         // Insert 'a' in empty document
         let insertA = CodeSyntaxTree.getInputEdit(
-            forRange: NSRange(location: 0, length: 0), newString: "a", oldString: "", documentString: "a"
+            beginIndex: 0, newString: "a", oldString: "", documentString: "a"
         )
 
         XCTAssertEqual(insertA.startByte, 0)
@@ -26,7 +26,7 @@ class SyntaxTreeTests: XCTestCase {
         XCTAssertEqual(insertA.newEndPoint.row, 0)
         XCTAssertEqual(insertA.newEndPoint.column, 1)
 
-        let insertNewLine = CodeSyntaxTree.getInputEdit(forRange: NSRange(location: 1, length: 0), newString: "\n", oldString: "", documentString: "a\n")
+        let insertNewLine = CodeSyntaxTree.getInputEdit(beginIndex: 1, newString: "\n", oldString: "", documentString: "a\n")
 
         XCTAssertEqual(insertNewLine.startByte, 1)
         XCTAssertEqual(insertNewLine.oldEndByte, 1)
@@ -38,7 +38,19 @@ class SyntaxTreeTests: XCTestCase {
         XCTAssertEqual(insertNewLine.newEndPoint.row, 1)
         XCTAssertEqual(insertNewLine.newEndPoint.column, 0)
         
-        let insertInMiddle = CodeSyntaxTree.getInputEdit(forRange: NSRange(location: 3, length: 0), newString: "hello", oldString: "", documentString: "hi hello there")
+        let insertSpace = CodeSyntaxTree.getInputEdit(beginIndex: 1, newString: " ", oldString: "", documentString: "a ")
+
+        XCTAssertEqual(insertSpace.startByte, 1)
+        XCTAssertEqual(insertSpace.oldEndByte, 1)
+        XCTAssertEqual(insertSpace.newEndByte, 2)
+        XCTAssertEqual(insertSpace.startPoint.row, 0)
+        XCTAssertEqual(insertSpace.startPoint.column, 1)
+        XCTAssertEqual(insertSpace.oldEndPoint.row, 0)
+        XCTAssertEqual(insertSpace.oldEndPoint.column, 1)
+        XCTAssertEqual(insertSpace.newEndPoint.row, 0)
+        XCTAssertEqual(insertSpace.newEndPoint.column, 2)
+        
+        let insertInMiddle = CodeSyntaxTree.getInputEdit(beginIndex: 3, newString: "hello", oldString: "", documentString: "hi hello there")
         
         XCTAssertEqual(insertInMiddle.startByte, 3)
         XCTAssertEqual(insertInMiddle.oldEndByte, 3)
@@ -51,7 +63,7 @@ class SyntaxTreeTests: XCTestCase {
         XCTAssertEqual(insertInMiddle.newEndPoint.column, 8)
         
         // Replaced an eight character string with the four character string "test"
-        let replaceSingleLine = CodeSyntaxTree.getInputEdit(forRange: NSRange(location: 3, length: 8), newString: "test", oldString: "abcdfghj", documentString: "my test works")
+        let replaceSingleLine = CodeSyntaxTree.getInputEdit(beginIndex: 3, newString: "test", oldString: "abcdfghj", documentString: "my test works")
         
         XCTAssertEqual(replaceSingleLine.startByte, 3)
         XCTAssertEqual(replaceSingleLine.oldEndByte, 11)
@@ -63,7 +75,7 @@ class SyntaxTreeTests: XCTestCase {
         XCTAssertEqual(replaceSingleLine.newEndPoint.row, 0)
         XCTAssertEqual(replaceSingleLine.newEndPoint.column, 7)
         
-        let deleteAll = CodeSyntaxTree.getInputEdit(forRange: NSRange(location: 0, length: 10), newString: "", oldString: "asdf\nhjklw", documentString: "")
+        let deleteAll = CodeSyntaxTree.getInputEdit(beginIndex: 0, newString: "", oldString: "asdf\nhjklw", documentString: "")
         
         XCTAssertEqual(deleteAll.startByte, 0)
         XCTAssertEqual(deleteAll.oldEndByte, 10)

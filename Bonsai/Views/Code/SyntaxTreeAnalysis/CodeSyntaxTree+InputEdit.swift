@@ -52,10 +52,10 @@ extension CodeSyntaxTree {
         }
     }
     
-    static func getInputEdit(forRange editRange: NSRange, newString: String, oldString: String, documentString: NSString) -> STSInputEdit {
+    static func getInputEdit(beginIndex: Int, newString: String, oldString: String, documentString: NSString) -> STSInputEdit {
         //print("Syntax tree edit \(editRange.location) \(editRange.length) '\(oldString)' '\(newString)'")
         
-        let startPoint = pointFromString(string: documentString, endOffset: editRange.location)
+        let startPoint = pointFromString(string: documentString, endOffset: beginIndex)
         
         var oldEndPoint = pointFromString(string: oldString as NSString, endOffset: oldString.count)
         oldEndPoint = incrementPoint(startPoint, by: oldEndPoint)
@@ -64,9 +64,9 @@ extension CodeSyntaxTree {
         newEndPoint = incrementPoint(startPoint, by: newEndPoint)
         
         let editInput = STSInputEdit(
-            startByte: uint(editRange.location),
-            oldEndByte: uint(editRange.location + oldString.count),
-            newEndByte: uint(editRange.location + newString.count),
+            startByte: uint(beginIndex),
+            oldEndByte: uint(beginIndex + oldString.count),
+            newEndByte: uint(beginIndex + newString.count),
             startPoint: startPoint,
             oldEndPoint: oldEndPoint,
             newEndPoint: newEndPoint)

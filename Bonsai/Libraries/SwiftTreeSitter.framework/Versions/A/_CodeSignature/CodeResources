@@ -29,42 +29,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uqKHHvkg6KCSUv+e0fql7FyOMzLkmWsjSqgrzyyYYOw=
+			ae8Ulq3HNUYO8Mfe3h6TwWPKH46LDc97am4Tsjo2RCU=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uqKHHvkg6KCSUv+e0fql7FyOMzLkmWsjSqgrzyyYYOw=
+			ae8Ulq3HNUYO8Mfe3h6TwWPKH46LDc97am4Tsjo2RCU=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5baVOW7/Mz8Jfmh/j2FDKhM5zEw7cXIMwludV8t2myo=
+			s5yK6teQMAqfWoGn29EkC9VCVZtTVLB5NmcoL2vmZiI=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0dPSEcNuIYoBFYPyar/7B/vUdK9idpDIBKHgI5MphmU=
+			F+9s1GsbdvOPQHeej3r52cO/ZmKdODfZW+cdroQO+X4=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5baVOW7/Mz8Jfmh/j2FDKhM5zEw7cXIMwludV8t2myo=
+			s5yK6teQMAqfWoGn29EkC9VCVZtTVLB5NmcoL2vmZiI=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0dPSEcNuIYoBFYPyar/7B/vUdK9idpDIBKHgI5MphmU=
+			F+9s1GsbdvOPQHeej3r52cO/ZmKdODfZW+cdroQO+X4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -78,28 +78,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			hIKIOlVsu0ubl4nqIy4qYyyKbTM=
+			bzThWmpWZBq/9asx0vft4hetvvE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"8482883a556cbb4b9b9789ea232e2a632c8a6d33"</string>
+			<string>cdhash H"6f34e15a6a56641abff5ab31d2f7ede217adbef1"</string>
 		</dict>
 		<key>PlugIns/languages/javascript.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			YcqXF0Sj7R3j1U9c+zAkJgouR9M=
+			spzpoEg+xCwTB544jkBZCGPFGsc=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"61ca971744a3ed1de3d54f5cfb3024260a2e47d3"</string>
+			<string>cdhash H"b29ce9a0483ec42c13079e388e40590863c51ac7"</string>
 		</dict>
 		<key>PlugIns/languages/json.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+OOl74dUTaLiEIFf6Qc7J48HiwY=
+			gdLMjekAasC33JraeKw7zuhMEmE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"f8e3a5ef87544da2e210815fe9073b278f078b06"</string>
+			<string>cdhash H"81d2cc8de9006ac0b7dc9ada78ac3bcee84c1261"</string>
 		</dict>
 		<key>PrivateHeaders/api.h</key>
 		<dict>

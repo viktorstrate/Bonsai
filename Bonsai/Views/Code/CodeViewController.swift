@@ -17,7 +17,7 @@ class CodeViewController: NSViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLayout() {
+    override func viewDidAppear() {
         textView.setup(document: document)
     }
     

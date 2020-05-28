@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CodeTextStorage: NSTextStorage {
+class CodeTextStorage: NSTextStorage, NSTextStorageDelegate {
     
     let document: CodeDocument
     let syntaxTree: CodeSyntaxTree
@@ -25,6 +25,8 @@ class CodeTextStorage: NSTextStorage {
         self.document = document
         self.syntaxTree = CodeSyntaxTree(document: document)
         super.init()
+        
+        self.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -39,9 +41,11 @@ class CodeTextStorage: NSTextStorage {
         return document.codeContent.contentString.attributes(at: location, effectiveRange: range)
     }
     
+    var oldStr: String = ""
+    
     override func replaceCharacters(in range: NSRange, with str: String) {
         
-        let oldStr = (textContent.string as NSString).substring(with: range)
+        oldStr = (textContent.string as NSString).substring(with: range)
         
         super.beginEditing()
         
@@ -53,22 +57,33 @@ class CodeTextStorage: NSTextStorage {
         )
         
         super.endEditing()
-        
-        syntaxTree.documentWasEdited(in: range, with: str, oldString: oldStr)
     }
     
     override func setAttributes(_ attrs: [NSAttributedString.Key : Any]?, range: NSRange) {
         super.beginEditing()
         
         textContent.addAttributes(attrs ?? [:], range: range)
-        
+
         super.edited(.editedAttributes, range: range, changeInLength: 0)
-        
+
         super.endEditing()
     }
     
     override func processEditing() {
         super.processEditing()
+    }
+    
+    func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
+        
+        if editedMask.contains(.editedCharacters) {
+            let newStr: String = (textContent.string as NSString)
+                .substring(with: editedRange)
+            
+            syntaxTree.documentWasEdited(beginIndex: editedRange.location, with: newStr, oldString: oldStr)
+            
+            syntaxTree.updateTextHighlight(in: NSRange(location: editedRange.location, length: newStr.count))
+        }
+        
     }
     
 }

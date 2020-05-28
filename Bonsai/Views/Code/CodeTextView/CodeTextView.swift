@@ -19,6 +19,13 @@ class CodeTextView: NSTextView {
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
         self.allowsUndo = true
+        self.isAutomaticDataDetectionEnabled = false
+        self.isAutomaticLinkDetectionEnabled = false
+        self.isAutomaticTextCompletionEnabled = false
+        self.isAutomaticTextReplacementEnabled = false
+        self.isAutomaticDashSubstitutionEnabled = false
+        self.isAutomaticQuoteSubstitutionEnabled = false
+        self.isAutomaticSpellingCorrectionEnabled = false
         
         setupGutter()
     }
