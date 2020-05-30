@@ -8,13 +8,15 @@
 
 import Cocoa
 
-class CodeTextView: NSTextView {
+class CodeTextView: NSTextView, NSTextStorageDelegate {
     
     var gutterView: CodeTextGutter?
+    var syntaxTree: CodeSyntaxTree!
     
     func setup(document: CodeDocument) {
-        let textStorage = CodeTextStorage(document: document)
-        self.layoutManager!.replaceTextStorage(textStorage)
+        
+        self.syntaxTree = CodeSyntaxTree(textStorage: self.textStorage!)
+        self.textStorage!.delegate = self
         
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
@@ -47,6 +49,29 @@ class CodeTextView: NSTextView {
     
     @objc func redrawGutter() {
         gutterView?.needsDisplay = true
+    }
+    
+    var oldStr: String = ""
+    
+    override func shouldChangeText(in affectedCharRange: NSRange, replacementString: String?) -> Bool {
+        oldStr = (self.string as NSString).substring(with: affectedCharRange)
+        return true
+    }
+    
+    func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
+        
+        if editedMask.contains(.editedCharacters) {
+            let newStr: String = (self.string as NSString).substring(with: editedRange)
+            
+            print("Edit '\(oldStr)' -> '\(newStr)'")
+            
+            syntaxTree.documentWasEdited(beginIndex: editedRange.location,
+                                         with: newStr, oldString: oldStr)
+            
+            syntaxTree.updateTextHighlight(in: NSRange(location: editedRange.location,
+                                                       length: newStr.count))
+        }
+        
     }
     
 }
