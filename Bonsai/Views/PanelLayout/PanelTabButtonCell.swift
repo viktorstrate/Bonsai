@@ -53,6 +53,14 @@ class PanelTabButtonCell: NSButtonCell {
             NSRect(x: frame.minX, y: frame.minY, width: frame.width, height: 2).fill()
         }
         
+        drawTitle(formattedTitle(), withFrame: frame, in: controlView)
+    }
+    
+    override func cellSize(forBounds rect: NSRect) -> NSSize {
+        return NSSize(width: button.frame.width, height: button.frame.height)
+    }
+    
+    func formattedTitle() -> NSAttributedString {
         var titleAttrs: [NSAttributedString.Key: Any] = [:]
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -63,13 +71,7 @@ class PanelTabButtonCell: NSButtonCell {
             titleAttrs[.foregroundColor] = NSColor.black
         }
         
-        let titleFormat = NSAttributedString(string: self.title, attributes: titleAttrs)
-        
-        drawTitle(titleFormat, withFrame: frame, in: controlView)
-    }
-    
-    override func cellSize(forBounds rect: NSRect) -> NSSize {
-        return NSSize(width: button.frame.width, height: button.frame.height)
+        return NSAttributedString(string: self.title, attributes: titleAttrs)
     }
     
 }

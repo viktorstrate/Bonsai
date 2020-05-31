@@ -49,9 +49,6 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
             
             let activeDocument = document == layoutPane.activeDocument
             
-            let tabFrame = NSRect(x: offsetX, y: 0, width: 100, height: 24)
-            offsetX += 100
-            
             let tab = tabs[codeController] ?? { () -> PanelTabButton in
                 let tab = PanelTabButton()
                 print("Making new tab")
@@ -64,6 +61,10 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
                 
                 return tab
             }()
+            
+            let buttonWidth = max(Double(tab.tabCell.formattedTitle().size().width) + 24, 100)
+            let tabFrame = NSRect(x: offsetX, y: 0, width: buttonWidth, height: 24)
+            offsetX += buttonWidth
             
             tab.frame = tabFrame
             tab.title = document.displayName
@@ -84,7 +85,26 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
             return
         }
         
-//        layoutPane.removeDocument(codeController.document!)
         layoutPane.activeDocument = codeController.document
+    }
+    
+    func closeTab(tab: PanelTabButton) {
+        guard let codeController = tabs.first(where: { tab == $1 })?.key else {
+            print("Didn't find document")
+            return
+        }
+        
+        layoutPane.removeDocument(codeController.document)
+    }
+    
+    func closeOtherTabs(tab: PanelTabButton) {
+
+        tabs.filter { $1 != tab }
+            .keys
+            .map { $0.document }
+            .forEach { (document) in
+                layoutPane.removeDocument(document)
+            }
+        
     }
 }
