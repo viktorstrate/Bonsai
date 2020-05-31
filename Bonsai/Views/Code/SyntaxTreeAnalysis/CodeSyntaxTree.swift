@@ -13,17 +13,45 @@ class CodeSyntaxTree {
     
     let textStorage: NSTextStorage
     
-    let parser: STSParser
-    let highlightsQuery: STSQuery
-    let queryCursor: STSQueryCursor
+    var parser: STSParser?
+    var highlightsQuery: STSQuery?
+    var queryCursor: STSQueryCursor?
     var tree: STSTree!
+    var theme: SyntaxHighlightTheme
     
-    init(textStorage: NSTextStorage) {
+    func detectLanguage(filetype: String) -> STSLanguage? {
+        switch filetype {
+        case "java":
+            return try? STSLanguage(fromPreBundle: .java)
+        case "js":
+            return try? STSLanguage(fromPreBundle: .javascript)
+        case "json":
+            return try? STSLanguage(fromPreBundle: .json)
+        default:
+            return nil
+        }
+    }
+    
+    init(textStorage: NSTextStorage, document: CodeDocument) {
         self.textStorage = textStorage
+        self.theme = SyntaxHighlightTheme()
         
-        let language = try! STSLanguage(fromPreBundle: .javascript)
+        setupParser(document: document)
         
-        parser = STSParser()
+    }
+    
+    func setupParser(document: CodeDocument) {
+        guard let filetype = document.fileURL?.pathExtension else {
+            return
+        }
+        
+        guard let language = detectLanguage(filetype: filetype) else {
+            return
+        }
+        
+        self.parser = STSParser()
+        let parser = self.parser!
+        
         parser.language = language
         
         tree = parser.parse(string: textStorage.string, oldTree: nil)
@@ -32,10 +60,13 @@ class CodeSyntaxTree {
         queryCursor = STSQueryCursor()
         
         updateTextHighlight(in: nil)
-        
     }
     
     func documentWasEdited(beginIndex: Int, with str: String, oldString: String) {
+        
+        guard let parser = self.parser else {
+            return
+        }
         
         let oldTree = self.tree.copy()
         
@@ -62,6 +93,10 @@ class CodeSyntaxTree {
     
     fileprivate func updateTextHighlight(in range: NSRange?) {
         
+        guard let queryCursor = self.queryCursor, let highlightsQuery = self.highlightsQuery else {
+            return
+        }
+        
         if let range = range {
             queryCursor.setByteRange(from: uint(range.location), to: uint(NSMaxRange(range)))
             textStorage.addAttribute(.foregroundColor, value: NSColor.black, range: range)
@@ -69,58 +104,22 @@ class CodeSyntaxTree {
         
         let captures = queryCursor.captures(query: highlightsQuery, onNode: tree.rootNode)
         
-        var syntaxForNodes: [STSNode: uint] = [:]
-        
         var loopCapture = captures.next()
         while loopCapture != nil {
             let capture = loopCapture!
-            
-            syntaxForNodes[capture.node] = capture.index
-            
             loopCapture = captures.next()
-        }
-        
-        for (_, syntaxNode) in syntaxForNodes.enumerated() {
             
-            let node = syntaxNode.key
-            let captureId = syntaxNode.value
+            let node = capture.node
+            let captureName = highlightsQuery.captureName(forId: capture.index)
             
-            let captureName = highlightsQuery.captureName(forId: captureId)
-            
-//            print("Node: \(node.byteRange)")
-//            print("Syntax: \(captureName)")
-            
-            let foregroundColor: NSColor
-            switch captureName {
-            case "variable":
-                //foregroundColor = NSColor(red: 0.141, green: 0.161, blue: 0.18, alpha: 1)
-                foregroundColor = NSColor(red: 0.541, green: 0.161, blue: 0.18, alpha: 1)
-            case "property":
-                foregroundColor = NSColor(red: 0.435, green: 0.259, blue: 0.757, alpha: 1)
-            case "string":
-                foregroundColor = NSColor(red: 0.0118, green: 0.184, blue: 0.384, alpha: 1)
-            case "number":
-                foregroundColor = NSColor(red: 0, green: 0.361, blue: 0.773, alpha: 1)
-            case "keyword":
-                foregroundColor = NSColor(red: 0.843, green: 0.227, blue: 0.286, alpha: 1)
-            case "comment":
-                foregroundColor = NSColor(red: 0.416, green: 0.451, blue: 0.49, alpha: 1)
-            default:
-                foregroundColor = .black
-            }
-            
-            var atts: [NSAttributedString.Key: Any] = [:]
-            atts[.foregroundColor] = foregroundColor
+            let atts = theme.getAttributes(forCaptureName: captureName)
             
             let attributeRange = NSRange(location: Int(node.byteRange.lowerBound), length: Int(NSRange(node.byteRange).length))
             
-//            print("Attr range: \(attributeRange)")
-//            print("String: '\(document.codeContent.contentString.string)'")
-            
             textStorage.addAttributes(atts, range: attributeRange)
             
+            
         }
-        
         
     }
     

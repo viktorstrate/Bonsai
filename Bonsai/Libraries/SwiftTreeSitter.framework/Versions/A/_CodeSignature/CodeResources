@@ -29,14 +29,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hkNR4jmayuEsch0oQ7BQaUhF/VSCafRI/A2YHsAEwVo=
+			1XdprveKkoBQYfem4DmdDjZRGMA09b4hhiGBP5GIhnU=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hkNR4jmayuEsch0oQ7BQaUhF/VSCafRI/A2YHsAEwVo=
+			1XdprveKkoBQYfem4DmdDjZRGMA09b4hhiGBP5GIhnU=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftdoc</key>
@@ -50,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UOV00PTFTyBnI51p7UH4DkcQqDUoHmc3o58rM8c+BQo=
+			IDTb+y7tHyktxFeu9Foa3DokFX73McNIge/8PmkLMVg=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftdoc</key>
@@ -64,7 +64,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UOV00PTFTyBnI51p7UH4DkcQqDUoHmc3o58rM8c+BQo=
+			IDTb+y7tHyktxFeu9Foa3DokFX73McNIge/8PmkLMVg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

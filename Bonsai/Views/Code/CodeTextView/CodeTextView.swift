@@ -12,12 +12,13 @@ class CodeTextView: NSTextView, NSTextStorageDelegate {
     
     var gutterView: CodeTextGutter?
     var syntaxTree: CodeSyntaxTree!
+    var document: CodeDocument!
     
     func setup(document: CodeDocument) {
-        
+        self.document = document
         document.codeTextView = self
         
-        self.syntaxTree = CodeSyntaxTree(textStorage: self.textStorage!)
+        self.syntaxTree = CodeSyntaxTree(textStorage: self.textStorage!, document: document)
         self.textStorage!.delegate = self
         
         self.textContainerInset = NSSize(width: 0, height: 10)
