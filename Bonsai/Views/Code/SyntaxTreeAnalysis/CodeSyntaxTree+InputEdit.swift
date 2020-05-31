@@ -53,7 +53,6 @@ extension CodeSyntaxTree {
     }
     
     static func getInputEdit(beginIndex: Int, newString: String, oldString: String, documentString: NSString) -> STSInputEdit {
-        //print("Syntax tree edit \(editRange.location) \(editRange.length) '\(oldString)' '\(newString)'")
         
         let startPoint = pointFromString(string: documentString, endOffset: beginIndex)
         

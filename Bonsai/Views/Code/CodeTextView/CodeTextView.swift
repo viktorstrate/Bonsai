@@ -15,12 +15,16 @@ class CodeTextView: NSTextView, NSTextStorageDelegate {
     
     func setup(document: CodeDocument) {
         
+        document.codeTextView = self
+        
         self.syntaxTree = CodeSyntaxTree(textStorage: self.textStorage!)
         self.textStorage!.delegate = self
         
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
+        
         self.allowsUndo = true
+        
         self.isAutomaticDataDetectionEnabled = false
         self.isAutomaticLinkDetectionEnabled = false
         self.isAutomaticTextCompletionEnabled = false
@@ -52,24 +56,19 @@ class CodeTextView: NSTextView, NSTextStorageDelegate {
     }
     
     var oldStr: String = ""
+    var newStr: String = ""
     
     override func shouldChangeText(in affectedCharRange: NSRange, replacementString: String?) -> Bool {
         oldStr = (self.string as NSString).substring(with: affectedCharRange)
-        return true
+        newStr = replacementString ?? ""
+        return super.shouldChangeText(in: affectedCharRange, replacementString: replacementString)
     }
     
     func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
         
         if editedMask.contains(.editedCharacters) {
-            let newStr: String = (self.string as NSString).substring(with: editedRange)
-            
-            print("Edit '\(oldStr)' -> '\(newStr)'")
-            
             syntaxTree.documentWasEdited(beginIndex: editedRange.location,
                                          with: newStr, oldString: oldStr)
-            
-            syntaxTree.updateTextHighlight(in: NSRange(location: editedRange.location,
-                                                       length: newStr.count))
         }
         
     }

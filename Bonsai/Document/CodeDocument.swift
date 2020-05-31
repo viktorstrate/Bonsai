@@ -10,8 +10,16 @@ import Cocoa
 
 class CodeDocument: NSDocument {
     
-    var codeContent: CodeContent = CodeContent()
     var contentViewController: EditorViewController!
+    
+    fileprivate var internalData: Data?
+    var codeTextView: CodeTextView? {
+        didSet {
+            guard let data = internalData else { return }
+            guard let str = String(data: data, encoding: .utf8) else { return }
+            codeTextView!.string = str
+        }
+    }
 
     override init() {
         super.init()
@@ -52,11 +60,13 @@ class CodeDocument: NSDocument {
     }
 
     override func data(ofType typeName: String) throws -> Data {
-        return codeContent.data()
+        return codeTextView!.string.data(using: .utf8)!
+        //return codeContent.data()
     }
 
     override func read(from data: Data, ofType typeName: String) throws {
-        try codeContent.read(data: data)
+        internalData = data
+//        try codeContent.read(data: data)
     }
     
     override func save(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType, completionHandler: @escaping (Error?) -> Void) {

@@ -31,7 +31,7 @@ class CodeSyntaxTree {
         highlightsQuery = try! STSQuery.loadBundledQuery(language: language, sourceType: .highlights)!
         queryCursor = STSQueryCursor()
         
-        updateTextHighlight(in: NSRange(location: 0, length: textStorage.string.count))
+        updateTextHighlight(in: nil)
         
     }
     
@@ -44,15 +44,26 @@ class CodeSyntaxTree {
         
         
         self.tree = parser.parse(string: textStorage.string, oldTree: nil)
-    }
-    
-    func updateTextHighlight(in range: NSRange?) {
+        
+        // Update syntax highlighting for changes nodes
+        let changedRanges = STSTree.changedRanges(oldTree: oldTree, newTree: self.tree)
         
         textStorage.beginEditing()
         
+        updateTextHighlight(in: NSRange(location: Int(inputEdit.startByte), length: Int(inputEdit.newEndByte-inputEdit.startByte)))
+        
+        for range in changedRanges {
+            updateTextHighlight(in: NSRange(location: Int(range.startByte), length: Int(range.endByte - range.startByte)))
+        }
+        
+        textStorage.endEditing()
+        
+    }
+    
+    fileprivate func updateTextHighlight(in range: NSRange?) {
+        
         if let range = range {
             queryCursor.setByteRange(from: uint(range.location), to: uint(NSMaxRange(range)))
-            
             textStorage.addAttribute(.foregroundColor, value: NSColor.black, range: range)
         }
         
@@ -110,7 +121,6 @@ class CodeSyntaxTree {
             
         }
         
-        textStorage.endEditing()
         
     }
     
