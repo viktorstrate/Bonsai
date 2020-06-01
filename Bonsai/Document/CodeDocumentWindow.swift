@@ -36,6 +36,11 @@ class CodeDocumentWindow: NSWindowController, NSWindowDelegate {
     }
     
     func openDocument(url: URL) {
+        
+        if let openDoc = documents.first { $0.fileURL == url } {
+            editorController.panelController.activeDocument = openDoc
+        }
+        
         guard let document = try? CodeDocument(contentsOf: url, ofType: "public.text") else {
             print("Could not open document")
             return

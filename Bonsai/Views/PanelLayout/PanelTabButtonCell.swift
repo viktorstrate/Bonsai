@@ -44,8 +44,14 @@ class PanelTabButtonCell: NSButtonCell {
         
         frame.fill()
         
+        // Side borders
         NSColor(calibratedWhite: 0.75, alpha: 1).setFill()
         NSRect(x: frame.maxX-1, y: frame.minY, width: 1, height: frame.height).fill()
+        NSRect(x: frame.minX, y: frame.minY, width: 1, height: frame.height).fill()
+        
+        if !button.activeTab {
+            NSRect(x: frame.minX, y: frame.maxY-1, width: frame.width, height: 1).fill()
+        }
         
         // Top highlight
         if button.activeTab {

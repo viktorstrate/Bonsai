@@ -37,7 +37,7 @@ class ProjectViewController: NSViewController {
         print("Loading project files")
         guard let files = try? FileManager.default.contentsOfDirectory(
             at: projectDirectory, includingPropertiesForKeys: nil, options: []) else {
-            print("Could not get project files")
+            print("Could not get project files: \(projectDirectory)")
             return
         }
         

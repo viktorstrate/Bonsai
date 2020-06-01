@@ -70,7 +70,7 @@ extension CodeTextGutter {
                 let lineRect = layoutManager.lineFragmentRect(forGlyphAt: glyphIndexForGlyphLine, effectiveRange: &effectiveRange, withoutAdditionalLayout: true)
                 
                 if glyphLineCount > 0 {
-                    drawLineNumber("-", lineRect.minY)
+                    //drawLineNumber("-", lineRect.minY)
                 } else {
                     drawLineNumber("\(lineNumber)", lineRect.minY)
                 }

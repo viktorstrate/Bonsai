@@ -51,7 +51,6 @@ class PanelLayoutPane: NSView {
         codeView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         codeView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        
         codeControllers.append(codeController)
         
         activeDocument = document

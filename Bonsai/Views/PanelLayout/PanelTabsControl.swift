@@ -32,7 +32,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
     func layoutTabs(animated: Bool = false) {
         print("Layout tabs \(layoutPane.codeControllers.count)")
         
-        var offsetX = 0.0
+        var offsetX = -1.0
         
         // Remove old tabs
         tabs.keys
@@ -64,7 +64,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
             
             let buttonWidth = max(Double(tab.tabCell.formattedTitle().size().width) + 24, 100)
             let tabFrame = NSRect(x: offsetX, y: 0, width: buttonWidth, height: 24)
-            offsetX += buttonWidth
+            offsetX += buttonWidth - 1
             
             if animated {
                 tab.animator().frame = tabFrame
@@ -127,24 +127,24 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
             
             var swappingIndex: Int?
             
-            let draggingLeft = nextPoint.x < dragPoint.x
+            let draggingLeft = nextPoint.x < prevPoint.x
+            prevPoint = nextPoint
             
             if draggingLeft && draggingIndex > 0 {
                 let leftTab: PanelTabButton! = tabs[layoutPane.codeControllers[draggingIndex-1]]
-                if NSMidX(draggingTab.frame) < NSMidX(leftTab.frame) {
+                if NSMinX(draggingTab.frame) < NSMidX(leftTab.frame) {
                     swappingIndex = draggingIndex-1
                 }
             }
             
             if !draggingLeft && draggingIndex < layoutPane.codeControllers.count-1 {
                 let rightTab: PanelTabButton! = tabs[layoutPane.codeControllers[draggingIndex+1]]
-                if NSMidX(draggingTab.frame) > NSMidX(rightTab.frame) {
+                if NSMaxX(draggingTab.frame) > NSMidX(rightTab.frame) {
                     swappingIndex = draggingIndex+1
                 }
             }
             
             if let swappingIndex = swappingIndex {
-                print("Swapping \(draggingIndex) \(swappingIndex)")
                 layoutPane.codeControllers.swapAt(draggingIndex, swappingIndex)
                 layoutTabs(animated: true)
             }
@@ -156,6 +156,10 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
     override func draw(_ dirtyRect: NSRect) {
         NSColor(calibratedWhite: 0.85, alpha: 1).setFill()
         dirtyRect.fill()
+        
+        // Bottom border
+        NSColor(calibratedWhite: 0.75, alpha: 1).setFill()
+        NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: 1).fill()
     }
     
     func tabClicked(tab: PanelTabButton) {

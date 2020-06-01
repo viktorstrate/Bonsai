@@ -18,6 +18,7 @@ class CodeDocument: NSDocument {
             guard let data = internalData else { return }
             guard let str = String(data: data, encoding: .utf8) else { return }
             codeTextView!.string = str
+            internalData = nil
         }
     }
 
@@ -27,7 +28,7 @@ class CodeDocument: NSDocument {
     }
 
     override class var autosavesInPlace: Bool {
-        return true
+        return false
     }
 
     override func makeWindowControllers() {

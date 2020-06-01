@@ -12,6 +12,8 @@ class CodeViewController: NSViewController {
     @IBOutlet weak var textView: CodeTextView!
     let document: CodeDocument
     
+    var detachedSubview: NSView?
+    
     init(document: CodeDocument) {
         self.document = document
         super.init(nibName: nil, bundle: nil)
@@ -32,6 +34,20 @@ class CodeViewController: NSViewController {
     var isHidden: Bool = false {
         didSet {
             self.view.isHidden = isHidden
+            
+            if isHidden {
+                if detachedSubview == nil {
+                    detachedSubview = self.view.subviews.first
+                    detachedSubview?.removeFromSuperviewWithoutNeedingDisplay()
+                }
+            } else {
+                if let subview = detachedSubview {
+                    print("found subview")
+                    self.view.addSubview(subview)
+                    subview.layoutFill(inside: self.view)
+                    detachedSubview = nil
+                }
+            }
             
             if isHidden == false {
                 textView.gutterView?.needsDisplay = true
