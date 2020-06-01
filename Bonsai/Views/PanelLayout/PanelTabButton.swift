@@ -39,8 +39,8 @@ class PanelTabButton: NSButton {
         //self.action = #selector(onClick)
         
         let contextMenu = NSMenu()
-        contextMenu.addItem(withTitle: "Close", action: #selector(closeTab), keyEquivalent: "")
-        contextMenu.addItem(withTitle: "Close Others", action: #selector(closeOtherTabs), keyEquivalent: "")
+        contextMenu.addItem(withTitle: "Close", action: #selector(closeTab), keyEquivalent: "w")
+        contextMenu.addItem(withTitle: "Close Others", action: #selector(closeOtherTabs), keyEquivalent: "W")
         
         self.menu = contextMenu
         

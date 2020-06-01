@@ -21,12 +21,18 @@ class CodeSyntaxTree {
     
     func detectLanguage(filetype: String) -> STSLanguage? {
         switch filetype {
+        case "css":
+            return try? STSLanguage(fromPreBundle: .css)
+        case "html":
+            return try? STSLanguage(fromPreBundle: .html)
         case "java":
             return try? STSLanguage(fromPreBundle: .java)
         case "js":
             return try? STSLanguage(fromPreBundle: .javascript)
         case "json":
             return try? STSLanguage(fromPreBundle: .json)
+        case "php":
+            return try? STSLanguage(fromPreBundle: .php)
         default:
             return nil
         }

@@ -22,6 +22,8 @@ class EditorViewController: NSSplitViewController {
         }
     }
     
+    var codeDocumentWindow: CodeDocumentWindow!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -31,6 +33,8 @@ class EditorViewController: NSSplitViewController {
     func documentSetup() {
         panelController.editorSetup(editorController: self)
         projectController.editorSetup(editorController: self)
+        
+        codeDocumentWindow = self.view.window?.windowController as? CodeDocumentWindow
     }
     
     func openProject(directory: URL) {

@@ -49,4 +49,12 @@ class PanelLayoutController: NSViewController, PanelLayoutPaneDelegate {
         activeDocument = document
     }
     
+    func layoutPane(_ pane: PanelLayoutPane, removeDocument document: CodeDocument) {
+        if let window = self.view.window?.windowController as? CodeDocumentWindow {
+            window.removeDocument(document)
+        } else {
+            print("PanelLayoutController: Could not get CodeDocumentWindow")
+        }
+    }
+    
 }

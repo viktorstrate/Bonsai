@@ -69,7 +69,7 @@ extension ProjectViewController: NSOutlineViewDataSource, NSOutlineViewDelegate 
         }
         
         guard let documentWindow = self.view.window?.windowController as? CodeDocumentWindow else {
-            print("Could not get window as CodeDocumentWindow")
+            print("ProjectViewController: Could not get CodeDocumentWindow")
             return
         }
         

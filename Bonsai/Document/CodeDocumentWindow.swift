@@ -27,10 +27,10 @@ class CodeDocumentWindow: NSWindowController, NSWindowDelegate {
     
     func removeDocument(_ document: CodeDocument) {
         if !documents.contains(document) {
+            print("CodeDocumentWindow.removeDocument: Document not found")
             return
         }
         
-        document.removeWindowController(self)
         CodeDocumentController.shared.removeDocument(document)
         documents.remove(document)
     }

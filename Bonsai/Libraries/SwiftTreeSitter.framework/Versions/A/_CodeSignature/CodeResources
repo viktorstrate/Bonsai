@@ -29,14 +29,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1XdprveKkoBQYfem4DmdDjZRGMA09b4hhiGBP5GIhnU=
+			cvG/DsQYVzJaExcTmOwx6Fi0+ZPTOHNcjjakmTEVI70=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1XdprveKkoBQYfem4DmdDjZRGMA09b4hhiGBP5GIhnU=
+			cvG/DsQYVzJaExcTmOwx6Fi0+ZPTOHNcjjakmTEVI70=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftdoc</key>
@@ -50,7 +50,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IDTb+y7tHyktxFeu9Foa3DokFX73McNIge/8PmkLMVg=
+			L5xJpv+NQ+IFB1WcBOGoxjXanYVO2u6bNMHRNfKMpTo=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftdoc</key>
@@ -64,7 +64,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IDTb+y7tHyktxFeu9Foa3DokFX73McNIge/8PmkLMVg=
+			L5xJpv+NQ+IFB1WcBOGoxjXanYVO2u6bNMHRNfKMpTo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -73,6 +73,24 @@
 			<data>
 			xAJDwAXrEibC5pu8VFhRy0OKXT814sZWQRvUnCLQTgU=
 			</data>
+		</dict>
+		<key>PlugIns/languages/css.bundle</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			dGbnsZbwLwuTQV6wTiE3lj1GxpM=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"7466e7b196f02f0b93415eb04e2137963d46c693"</string>
+		</dict>
+		<key>PlugIns/languages/html.bundle</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			cSwEpx6uMkf4QoVccZqA3itHspA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"712c04a71eae3247f842855c719a80de2b47b290"</string>
 		</dict>
 		<key>PlugIns/languages/java.bundle</key>
 		<dict>
@@ -100,6 +118,15 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"81d2cc8de9006ac0b7dc9ada78ac3bcee84c1261"</string>
+		</dict>
+		<key>PlugIns/languages/php.bundle</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			/2fVUHCPcIPCTp0tQlWr6CpeoZY=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"ff67d550708f7083c24e9d2d4255abe82a5ea196"</string>
 		</dict>
 		<key>PrivateHeaders/api.h</key>
 		<dict>

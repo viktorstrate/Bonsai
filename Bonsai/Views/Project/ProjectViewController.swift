@@ -18,7 +18,7 @@ class ProjectViewController: NSViewController {
     
     var projectFileItems: [ProjectFileItem] = []
     
-    private weak var editorController: EditorViewController!
+    internal weak var editorController: EditorViewController!
     
     @IBOutlet weak var projectOutlineView: NSOutlineView!
     

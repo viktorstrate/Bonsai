@@ -68,7 +68,14 @@ class PanelLayoutPane: NSView {
         codeController.view.removeFromSuperview()
         
         codeControllers.removeAll { $0 == codeController }
+        
+        if document == activeDocument {
+            activeDocument = codeControllers.first?.document
+        }
+        
         tabsControl.layoutTabs()
+        
+        self.delegate?.layoutPane(self, removeDocument: document)
     }
     
     fileprivate func setup() {
@@ -92,4 +99,5 @@ class PanelLayoutPane: NSView {
 
 protocol PanelLayoutPaneDelegate {
     func layoutPane(_ pane: PanelLayoutPane, activeDocumentChanged document: CodeDocument?)
+    func layoutPane(_ pane: PanelLayoutPane, removeDocument document: CodeDocument)
 }
