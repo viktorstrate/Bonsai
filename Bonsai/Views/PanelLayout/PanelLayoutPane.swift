@@ -25,7 +25,7 @@ class PanelLayoutPane: NSView {
     
     var delegate: PanelLayoutPaneDelegate?
     
-    var codeControllers: Set<CodeViewController> = Set()
+    var codeControllers: [CodeViewController] = []
     var tabsControl: PanelTabsControl!
 
     init() {
@@ -52,7 +52,7 @@ class PanelLayoutPane: NSView {
         codeView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         
-        codeControllers.insert(codeController)
+        codeControllers.append(codeController)
         
         activeDocument = document
         tabsControl.layoutTabs()
@@ -68,7 +68,7 @@ class PanelLayoutPane: NSView {
         codeController.removeFromParent()
         codeController.view.removeFromSuperview()
         
-        codeControllers.remove(codeController)
+        codeControllers.removeAll { $0 == codeController }
         tabsControl.layoutTabs()
     }
     

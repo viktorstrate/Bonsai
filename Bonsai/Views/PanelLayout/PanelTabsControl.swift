@@ -29,7 +29,7 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
         layoutTabs()
     }
     
-    func layoutTabs() {
+    func layoutTabs(animated: Bool = false) {
         print("Layout tabs \(layoutPane.codeControllers.count)")
         
         var offsetX = 0.0
@@ -66,11 +66,91 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
             let tabFrame = NSRect(x: offsetX, y: 0, width: buttonWidth, height: 24)
             offsetX += buttonWidth
             
-            tab.frame = tabFrame
+            if animated {
+                tab.animator().frame = tabFrame
+            } else {
+                tab.frame = tabFrame
+            }
+            
+            
             tab.title = document.displayName
             tab.activeTab = activeDocument
             tab.needsDisplay = true
         }
+    }
+    
+    func reorderTab(_ tab: PanelTabButton, withEvent event: NSEvent) {
+        
+        let dragPoint = self.convert(event.locationInWindow, from: nil)
+        let startX = NSMinX(tab.frame)
+        
+        var prevPoint = dragPoint
+        var reordered = false
+        
+        let draggingCodeController: CodeViewController! = tabs.first { $1 == tab }?.key
+        
+        let draggingTab = tab.copy() as! PanelTabButton
+        self.addSubview(draggingTab)
+        tab.isHidden = true
+        
+        while(true) {
+            let mask = NSEvent.EventTypeMask.leftMouseUp.union(NSEvent.EventTypeMask.leftMouseDragged)
+            let event = self.window!.nextEvent(matching: mask)!
+            
+            if event.type == .leftMouseUp {
+                print("Done")
+//                tab.isHidden = false
+                
+                NSAnimationContext.beginGrouping()
+                NSAnimationContext.current.completionHandler = {
+                    tab.isHidden = false
+                    draggingTab.removeFromSuperview()
+                }
+                
+                draggingTab.animator().frame = tab.frame
+                
+                NSAnimationContext.endGrouping()
+                
+                
+                break
+            }
+            
+            let nextPoint = self.convert(event.locationInWindow, from: nil)
+            let nextX = startX + (nextPoint.x - dragPoint.x)
+            
+            var newFrame = draggingTab.frame
+            newFrame.origin.x = nextX
+            draggingTab.frame = newFrame
+            
+            let draggingIndex: Int! = layoutPane.codeControllers
+                .firstIndex { $0 == draggingCodeController }
+            
+            var swappingIndex: Int?
+            
+            let draggingLeft = nextPoint.x < dragPoint.x
+            
+            if draggingLeft && draggingIndex > 0 {
+                let leftTab: PanelTabButton! = tabs[layoutPane.codeControllers[draggingIndex-1]]
+                if NSMidX(draggingTab.frame) < NSMidX(leftTab.frame) {
+                    swappingIndex = draggingIndex-1
+                }
+            }
+            
+            if !draggingLeft && draggingIndex < layoutPane.codeControllers.count-1 {
+                let rightTab: PanelTabButton! = tabs[layoutPane.codeControllers[draggingIndex+1]]
+                if NSMidX(draggingTab.frame) > NSMidX(rightTab.frame) {
+                    swappingIndex = draggingIndex+1
+                }
+            }
+            
+            if let swappingIndex = swappingIndex {
+                print("Swapping \(draggingIndex) \(swappingIndex)")
+                layoutPane.codeControllers.swapAt(draggingIndex, swappingIndex)
+                layoutTabs(animated: true)
+            }
+            
+        }
+        
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -106,5 +186,20 @@ class PanelTabsControl: NSControl, PanelTabButtonDelegate {
                 layoutPane.removeDocument(document)
             }
         
+    }
+    
+    func mouseDown(tab: PanelTabButton, withEvent event: NSEvent) {
+        
+        let mask = NSEvent.EventTypeMask.leftMouseUp.union(NSEvent.EventTypeMask.leftMouseDragged)
+        
+        print("Reading next event")
+        guard let event = self.window?.nextEvent(
+            matching: mask, until: .distantFuture, inMode: .eventTracking, dequeue: false)
+            , event.type == .leftMouseDragged else {
+                return
+        }
+        
+        print("Reorder tab")
+        reorderTab(tab, withEvent: event)
     }
 }

@@ -20,8 +20,12 @@ class PanelTabButton: NSButton {
         }
     }
     
-    public init() {
-        super.init(frame: NSRect())
+    public convenience init() {
+        self.init(frame: NSRect())
+    }
+    
+    public override init(frame: NSRect) {
+        super.init(frame: frame)
         self.setup()
     }
     
@@ -31,8 +35,8 @@ class PanelTabButton: NSButton {
     
     fileprivate func setup() {
         self.cell = PanelTabButtonCell(button: self)
-        self.target = self
-        self.action = #selector(onClick)
+        //self.target = self
+        //self.action = #selector(onClick)
         
         let contextMenu = NSMenu()
         contextMenu.addItem(withTitle: "Close", action: #selector(closeTab), keyEquivalent: "")
@@ -42,7 +46,17 @@ class PanelTabButton: NSButton {
         
     }
     
+    override open func copy() -> Any {
+        let copy = PanelTabButton(frame: self.frame)
+        copy.activeTab = self.activeTab
+        copy.isHighlighted = self.isHighlighted
+        copy.title = self.title
+        
+        return copy
+    }
+    
     @objc func onClick() {
+        print("onClick")
         delegate?.tabClicked(tab: self)
     }
     
@@ -53,10 +67,21 @@ class PanelTabButton: NSButton {
     @objc func closeOtherTabs() {
         self.delegate?.closeOtherTabs(tab: self)
     }
+    
+    override func mouseDown(with event: NSEvent) {
+        print("mouseDown")
+        onClick()
+        self.isHighlighted = true
+        print("mouseDown end")
+        self.delegate?.mouseDown(tab: self, withEvent: event)
+        
+        self.isHighlighted = false
+    }
 }
 
 protocol PanelTabButtonDelegate {
     func tabClicked(tab: PanelTabButton)
     func closeTab(tab: PanelTabButton)
     func closeOtherTabs(tab: PanelTabButton)
+    func mouseDown(tab: PanelTabButton, withEvent event: NSEvent)
 }
