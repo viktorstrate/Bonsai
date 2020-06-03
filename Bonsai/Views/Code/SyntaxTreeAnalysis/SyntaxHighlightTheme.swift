@@ -14,10 +14,10 @@ class SyntaxHighlightTheme {
         
     }
     
-    public func getAttributes(forCaptureName captureName: String) -> [NSAttributedString.Key:Any] {
+    public func getAttributes(forCapture capture: STSQueryCapture) -> [NSAttributedString.Key:Any] {
         
         let foregroundColor: NSColor
-        switch captureName {
+        switch capture.name {
         case "variable":
             //foregroundColor = NSColor(red: 0.141, green: 0.161, blue: 0.18, alpha: 1)
             //foregroundColor = NSColor(red: 0.541, green: 0.161, blue: 0.18, alpha: 1)
@@ -44,7 +44,7 @@ class SyntaxHighlightTheme {
         case "constant.builtin":
             foregroundColor = NSColor(red: 0.000, green: 0.353, blue: 0.784, alpha: 1)
         default:
-            print("Unhandled capture name: \(captureName)")
+            //print("Unhandled capture name: \(capture.name)")
             foregroundColor = .black
         }
         

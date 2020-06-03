@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/info.plist</key>
-		<data>
-		QVI50qwQgGFiO/O/Xye8Gtj3eLQ=
-		</data>
 		<key>Resources/queries/highlights.scm</key>
 		<data>
 		rxRK8Bbxh/X8cH9eTDADeijOSZA=
@@ -15,13 +11,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vZmyC7kuomfrdXJ2Lsu0vy8kYO1vhQ+DogDi/RoUbNE=
-			</data>
-		</dict>
 		<key>Resources/queries/highlights.scm</key>
 		<dict>
 			<key>hash2</key>

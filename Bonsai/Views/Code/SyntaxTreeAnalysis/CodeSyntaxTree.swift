@@ -15,8 +15,9 @@ class CodeSyntaxTree {
     
     var parser: STSParser?
     var highlightsQuery: STSQuery?
-    var queryCursor: STSQueryCursor?
+    var injectsQuery: STSQuery?
     var tree: STSTree!
+    var subtrees: [STSTree] = []
     var theme: SyntaxHighlightTheme
     
     func detectLanguage(filetype: String) -> STSLanguage? {
@@ -27,7 +28,7 @@ class CodeSyntaxTree {
             return try? STSLanguage(fromPreBundle: .html)
         case "java":
             return try? STSLanguage(fromPreBundle: .java)
-        case "js":
+        case "js", "javascript":
             return try? STSLanguage(fromPreBundle: .javascript)
         case "json":
             return try? STSLanguage(fromPreBundle: .json)
@@ -42,11 +43,11 @@ class CodeSyntaxTree {
         self.textStorage = textStorage
         self.theme = SyntaxHighlightTheme()
         
-        setupParser(document: document)
+        initialParse(document: document)
         
     }
     
-    func setupParser(document: CodeDocument) {
+    func initialParse(document: CodeDocument) {
         guard let filetype = document.fileURL?.pathExtension else {
             return
         }
@@ -55,17 +56,76 @@ class CodeSyntaxTree {
             return
         }
         
-        self.parser = STSParser()
+        self.parser = STSParser(language: language)
         let parser = self.parser!
-        
-        parser.language = language
         
         tree = parser.parse(string: textStorage.string, oldTree: nil)
         
         highlightsQuery = try! STSQuery.loadBundledQuery(language: language, sourceType: .highlights)!
-        queryCursor = STSQueryCursor()
+        injectsQuery = try! STSQuery.loadBundledQuery(language: language, sourceType: .injections)
         
-        updateTextHighlight(in: nil)
+        if let highlightsQuery = highlightsQuery {
+            updateTextHighlight(query: highlightsQuery, tree: tree, in: nil)
+        }
+        
+        parseSubtrees(in: nil)
+        
+    }
+    
+    func parseSubtrees(in range: NSRange?) {
+        
+        guard let injectsQuery = self.injectsQuery, let tree = self.tree else {
+            return
+        }
+        
+        let subCursor: STSQueryCursor
+        
+        if let range = range {
+            print("Subtrees range: \(range)")
+            subCursor = STSQueryCursor(byteRangeFrom: uint(range.location), to: uint(NSMaxRange(range)))
+        } else {
+            subCursor = STSQueryCursor()
+        }
+        
+        
+        let matches = subCursor.matches(query: injectsQuery, onNode: tree.rootNode)
+        for match in matches {
+            
+            
+            let predicates = injectsQuery.predicates(forPatternIndex: match.index)
+            let injectLangPred = predicates.first { $0.name == "set!" && $0.args.first == STSQueryPredicateArg.string("injection.language") }
+            
+            guard case let .string(languageStr) = injectLangPred?.args[1] else {
+                continue
+            }
+            
+            guard let subLang = detectLanguage(filetype: languageStr) else {
+                print("Could not find parser for embedded language: \(languageStr)")
+                continue
+            }
+            
+            guard let subQuery = try? STSQuery.loadBundledQuery(language: subLang, sourceType: .highlights) else {
+                print("Could not find highlights for embedded language: \(languageStr)")
+                continue
+            }
+            
+            let subParser = STSParser(language: subLang)
+            
+            let ranges = match.captures.map { STSRange(from: $0.node) }
+            print("Sub language ranges \(ranges.count)")
+            
+            let _ = subParser.setIncludedRanges(ranges)
+            
+            guard let subTree = subParser.parse(string: textStorage.string, oldTree: nil) else {
+                print("Embedded language parser returned nil")
+                continue
+            }
+            
+            updateTextHighlight(query: subQuery, tree: subTree, in: nil)
+            
+            print("Found injection match: \(match.index) with lang: \(languageStr)")
+        }
+        
     }
     
     func documentWasEdited(beginIndex: Int, with str: String, oldString: String) {
@@ -85,40 +145,54 @@ class CodeSyntaxTree {
         // Update syntax highlighting for changes nodes
         let changedRanges = STSTree.changedRanges(oldTree: oldTree, newTree: self.tree)
         
-        textStorage.beginEditing()
+        var rangesToUpdate: [NSRange] = []
         
-        updateTextHighlight(in: NSRange(location: Int(inputEdit.startByte), length: Int(inputEdit.newEndByte-inputEdit.startByte)))
+        if let highlightsQuery = highlightsQuery {
         
-        for range in changedRanges {
-            updateTextHighlight(in: NSRange(location: Int(range.startByte), length: Int(range.endByte - range.startByte)))
+            rangesToUpdate.append(NSRange(location: Int(inputEdit.startByte), length: Int(inputEdit.newEndByte-inputEdit.startByte)))
+            
+            
+            for range in changedRanges {
+                
+                rangesToUpdate.append(NSRange(location: Int(range.startByte), length: Int(range.endByte - range.startByte)))
+                
+                
+            }
+            
+            textStorage.beginEditing()
+            
+            rangesToUpdate.forEach { range in
+                updateTextHighlight(query: highlightsQuery, tree: tree, in: range)
+            }
+            
+            textStorage.endEditing()
+            
         }
         
-        textStorage.endEditing()
+        let unionRange = rangesToUpdate.reduce(rangesToUpdate[0]) { (acc, next) -> NSRange in
+            return acc.union(next)
+        }
+        
+        parseSubtrees(in: unionRange)
         
     }
     
-    fileprivate func updateTextHighlight(in range: NSRange?) {
+    fileprivate func updateTextHighlight(query: STSQuery, tree: STSTree, in range: NSRange?) {
         
-        guard let queryCursor = self.queryCursor, let highlightsQuery = self.highlightsQuery else {
-            return
-        }
-        
+        let queryCursor: STSQueryCursor
         if let range = range {
-            queryCursor.setByteRange(from: uint(range.location), to: uint(NSMaxRange(range)))
+            queryCursor = STSQueryCursor(byteRangeFrom: uint(range.location), to: uint(NSMaxRange(range)))
             textStorage.addAttribute(.foregroundColor, value: NSColor.black, range: range)
+        } else {
+            queryCursor = STSQueryCursor()
         }
         
-        let captures = queryCursor.captures(query: highlightsQuery, onNode: tree.rootNode)
-        
-        var loopCapture = captures.next()
-        while loopCapture != nil {
-            let capture = loopCapture!
-            loopCapture = captures.next()
+        let captures = queryCursor.captures(query: query, onNode: tree.rootNode)
+        for capture in captures {
             
             let node = capture.node
-            let captureName = highlightsQuery.captureName(forId: capture.index)
             
-            let atts = theme.getAttributes(forCaptureName: captureName)
+            let atts = theme.getAttributes(forCapture: capture)
             
             let attributeRange = NSRange(location: Int(node.byteRange.lowerBound), length: Int(NSRange(node.byteRange).length))
             

@@ -11,8 +11,6 @@
 		341784A0247E6CCB00843085 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3417849E247E6CCB00843085 /* CodeViewController.xib */; };
 		341784A6247EB7EB00843085 /* CodeSyntaxTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784A5247EB7EB00843085 /* CodeSyntaxTree.swift */; };
 		341784A8247EE4F600843085 /* SyntaxTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784A7247EE4F600843085 /* SyntaxTreeTests.swift */; };
-		341784A9247EE82D00843085 /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; };
-		341784AA247EE82D00843085 /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		341784AE247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341784AD247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift */; };
 		343085FD2474838C00675B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343085FC2474838C00675B1A /* AppDelegate.swift */; };
 		343086012474838C00675B1A /* CodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343086002474838C00675B1A /* CodeDocument.swift */; };
@@ -21,6 +19,8 @@
 		3430861D2474838E00675B1A /* BonsaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430861C2474838E00675B1A /* BonsaiUITests.swift */; };
 		3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430862A247484A000675B1A /* CodeDocumentController.swift */; };
 		343E10992483C0F40067F56C /* SyntaxHighlightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E10982483C0F40067F56C /* SyntaxHighlightTheme.swift */; };
+		343E14A62487B2520067F56C /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; };
+		343E14A72487B2520067F56C /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */; };
 		345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714524753F5D00E47D23 /* EditorViewController.swift */; };
 		345A714C2475408100E47D23 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714A2475408100E47D23 /* ProjectViewController.swift */; };
@@ -63,7 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				341784AA247EE82D00843085 /* SwiftTreeSitter.framework in Embed Frameworks */,
+				343E14A72487B2520067F56C /* SwiftTreeSitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341784A9247EE82D00843085 /* SwiftTreeSitter.framework in Frameworks */,
+				343E14A62487B2520067F56C /* SwiftTreeSitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

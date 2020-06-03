@@ -39,6 +39,7 @@
 		<key>Filetypes</key>
 		<array>
 			<string>js</string>
+			<string>jsx</string>
 		</array>
 		<key>Highlights</key>
 		<array>

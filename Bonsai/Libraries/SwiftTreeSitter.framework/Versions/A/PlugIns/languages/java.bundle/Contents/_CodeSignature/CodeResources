@@ -4,29 +4,29 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/info.plist</key>
-		<data>
-		F2l0dtfxlo+hEdPpKtUYOhu7CyI=
-		</data>
 		<key>Resources/queries/highlights.scm</key>
 		<data>
-		5m5HdLgx1syAoR7oB/g3SXOvIp4=
+		SQhdqdejFhTkp6fd+YThjYiDl0c=
+		</data>
+		<key>Resources/queries/tags.scm</key>
+		<data>
+		DzaFmwOiuvsWapuU5qL0TIa4DP4=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			jfdZnNPn4sTem9uv6cU5xZIU+MOIMXa5/zbXYXdBi7I=
-			</data>
-		</dict>
 		<key>Resources/queries/highlights.scm</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+alzbE3kUe0EnHlQtfI1ABkik681b33UfALNwhf2DlQ=
+			8bIHf5GJBI9KVtkw5XkXZ7WYKTT+QjEgtAAWGVmmCxs=
+			</data>
+		</dict>
+		<key>Resources/queries/tags.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9r0FFFb1giXB9hUq5jTqaEgq0IzEQyELTUXHq3rrzFA=
 			</data>
 		</dict>
 	</dict>

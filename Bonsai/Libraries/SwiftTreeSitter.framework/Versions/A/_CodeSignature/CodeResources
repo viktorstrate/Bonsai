@@ -29,42 +29,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvG/DsQYVzJaExcTmOwx6Fi0+ZPTOHNcjjakmTEVI70=
+			b7JrisdZfRjjadx/enj2yygUBY1vJrilL2mPsbnv24M=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cvG/DsQYVzJaExcTmOwx6Fi0+ZPTOHNcjjakmTEVI70=
+			b7JrisdZfRjjadx/enj2yygUBY1vJrilL2mPsbnv24M=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E99m2w/PUQ7ZXvuIXvjDxz30qDC7rpERNKSQo5/QuT4=
+			lwlAAPu533uAGwEVwovw48a15cYhrbU6ipnCLjZYo0U=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L5xJpv+NQ+IFB1WcBOGoxjXanYVO2u6bNMHRNfKMpTo=
+			NqtuokNo5T9nwSRbHaLF9BytGh+kVnFX+tk0YpulqU4=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E99m2w/PUQ7ZXvuIXvjDxz30qDC7rpERNKSQo5/QuT4=
+			lwlAAPu533uAGwEVwovw48a15cYhrbU6ipnCLjZYo0U=
 			</data>
 		</dict>
 		<key>Modules/SwiftTreeSitter.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L5xJpv+NQ+IFB1WcBOGoxjXanYVO2u6bNMHRNfKMpTo=
+			NqtuokNo5T9nwSRbHaLF9BytGh+kVnFX+tk0YpulqU4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -78,55 +78,55 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			dGbnsZbwLwuTQV6wTiE3lj1GxpM=
+			2gwG2VOjwTPY+clY2/YWqA8MBbU=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"7466e7b196f02f0b93415eb04e2137963d46c693"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.css" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PlugIns/languages/html.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cSwEpx6uMkf4QoVccZqA3itHspA=
+			V0lvWthm8z3Mp5p6LjjYJ8O8o7A=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"712c04a71eae3247f842855c719a80de2b47b290"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.html" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PlugIns/languages/java.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			bzThWmpWZBq/9asx0vft4hetvvE=
+			jwD0RYNFrUYSO+ZXkwubYVIJctQ=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"6f34e15a6a56641abff5ab31d2f7ede217adbef1"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.java" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PlugIns/languages/javascript.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			spzpoEg+xCwTB544jkBZCGPFGsc=
+			/tDpT97miy/1t6SKPw45hhCiAhg=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"b29ce9a0483ec42c13079e388e40590863c51ac7"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.javascript" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PlugIns/languages/json.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			gdLMjekAasC33JraeKw7zuhMEmE=
+			u8a3NzvVxMglXFPpKKg6ObVq3+U=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"81d2cc8de9006ac0b7dc9ada78ac3bcee84c1261"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.json" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PlugIns/languages/php.bundle</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/2fVUHCPcIPCTp0tQlWr6CpeoZY=
+			M2ib/V2eAZL1Z0oqAE+PfxsiUlg=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"ff67d550708f7083c24e9d2d4255abe82a5ea196"</string>
+			<string>identifier "io.github.viktorstrate.SwiftTreeSitter.language.php" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: viktorstrate@gmail.com (N259XGFQBG)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>PrivateHeaders/api.h</key>
 		<dict>

@@ -3,9 +3,66 @@
 <plist version="1.0">
 <dict>
 	<key>files</key>
-	<dict/>
+	<dict>
+		<key>Resources/queries/highlights-jsx.scm</key>
+		<data>
+		vOSuqXx29S3mb/spUAV9f3d3FZo=
+		</data>
+		<key>Resources/queries/highlights.scm</key>
+		<data>
+		gye6rHNTTh6cjNUCh2NwN6wuOxs=
+		</data>
+		<key>Resources/queries/injections.scm</key>
+		<data>
+		4xdYxfLnV6pK8KEXkhrVOwmhz6M=
+		</data>
+		<key>Resources/queries/locals.scm</key>
+		<data>
+		2yHvYINmmODnXY+TbRoKiWvLN/c=
+		</data>
+		<key>Resources/queries/tags.scm</key>
+		<data>
+		vVPhqoDC6Vs40ClJKEAsd7lu9+M=
+		</data>
+	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>Resources/queries/highlights-jsx.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1CrSC7awi/aUIirtJSIau17zqNoTaBwHMez18gePsno=
+			</data>
+		</dict>
+		<key>Resources/queries/highlights.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			asBNAaIDvjA69RQodw+cb04mTjlWGtRDmh1ounztC2U=
+			</data>
+		</dict>
+		<key>Resources/queries/injections.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0o98rDI6h05+ANlq0Kw340k0pnX9bqYsKyIxF8Z27p8=
+			</data>
+		</dict>
+		<key>Resources/queries/locals.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CoejYyGHWpRMMgJC36DDeH9LtAAf5T0tug1l8xC0fHI=
+			</data>
+		</dict>
+		<key>Resources/queries/tags.scm</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A+bWGyL7YsH3IoHtCQDOwAw0W4M+nKwwPqRi8/mdpFI=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^Resources/</key>
