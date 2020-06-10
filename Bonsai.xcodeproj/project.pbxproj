@@ -28,6 +28,7 @@
 		3468816A2475116A007AF5C6 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881692475116A007AF5C6 /* CodeContent.swift */; };
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
+		34898B3724912F4A00C1E01F /* WorkingDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34898B3624912F4A00C1E01F /* WorkingDirectoryManager.swift */; };
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
@@ -98,6 +99,7 @@
 		346881692475116A007AF5C6 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
+		34898B3624912F4A00C1E01F /* WorkingDirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingDirectoryManager.swift; sourceTree = "<group>"; };
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				34CF88422476CF720031D819 /* CodeDocumentWindow.swift */,
 				3430862A247484A000675B1A /* CodeDocumentController.swift */,
 				346881692475116A007AF5C6 /* CodeContent.swift */,
+				34898B3624912F4A00C1E01F /* WorkingDirectoryManager.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				34CF884A247815860031D819 /* PanelLayoutController.swift in Sources */,
 				34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */,
 				34CF884F247819B50031D819 /* NSView+layout.swift in Sources */,
+				34898B3724912F4A00C1E01F /* WorkingDirectoryManager.swift in Sources */,
 				34CF885B24785B950031D819 /* PanelTabButton.swift in Sources */,
 				341784A6247EB7EB00843085 /* CodeSyntaxTree.swift in Sources */,
 				345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */,

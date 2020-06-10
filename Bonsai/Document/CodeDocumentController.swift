@@ -37,6 +37,8 @@ class CodeDocumentController: NSDocumentController {
                 editorController.openProject(directory: url)
             }
             
+            self.noteNewRecentDocumentURL(url)
+            
             completionHandler(document, false, nil)
 
         } else {            
