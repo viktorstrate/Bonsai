@@ -19,8 +19,6 @@
 		3430861D2474838E00675B1A /* BonsaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430861C2474838E00675B1A /* BonsaiUITests.swift */; };
 		3430862B247484A000675B1A /* CodeDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430862A247484A000675B1A /* CodeDocumentController.swift */; };
 		343E10992483C0F40067F56C /* SyntaxHighlightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E10982483C0F40067F56C /* SyntaxHighlightTheme.swift */; };
-		343E14A62487B2520067F56C /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; };
-		343E14A72487B2520067F56C /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		345A714324753C7700E47D23 /* CodeTextGutter+LineNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */; };
 		345A714724753F5D00E47D23 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714524753F5D00E47D23 /* EditorViewController.swift */; };
 		345A714C2475408100E47D23 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A714A2475408100E47D23 /* ProjectViewController.swift */; };
@@ -29,6 +27,8 @@
 		346881AF24752F01007AF5C6 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881AE24752F01007AF5C6 /* CodeTextView.swift */; };
 		346881B224752F6E007AF5C6 /* CodeTextGutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346881B124752F6E007AF5C6 /* CodeTextGutter.swift */; };
 		34898B3724912F4A00C1E01F /* WorkingDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34898B3624912F4A00C1E01F /* WorkingDirectoryManager.swift */; };
+		34898B742491422200C1E01F /* SwiftTreeSitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34898B6E2491421200C1E01F /* SwiftTreeSitter.framework */; };
+		34898B752491422200C1E01F /* SwiftTreeSitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34898B6E2491421200C1E01F /* SwiftTreeSitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34CF88432476CF720031D819 /* CodeDocumentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88422476CF720031D819 /* CodeDocumentWindow.swift */; };
 		34CF88452476EB630031D819 /* ProjectViewController+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */; };
 		34CF8847247720BD0031D819 /* ProjectFileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */; };
@@ -55,6 +55,27 @@
 			remoteGlobalIDString = 343085F82474838C00675B1A;
 			remoteInfo = Bonsai;
 		};
+		34898B6D2491421200C1E01F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 344FE3042479B6DA0011F2CD;
+			remoteInfo = SwiftTreeSitter;
+		};
+		34898B6F2491421200C1E01F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 344FE30D2479B6DA0011F2CD;
+			remoteInfo = SwiftTreeSitterTests;
+		};
+		34898B712491421200C1E01F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 343E112E2487979A0067F56C;
+			remoteInfo = "tree-sitter";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				343E14A72487B2520067F56C /* SwiftTreeSitter.framework in Embed Frameworks */,
+				34898B752491422200C1E01F /* SwiftTreeSitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +95,6 @@
 /* Begin PBXFileReference section */
 		3417849D247E6CCB00843085 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		3417849E247E6CCB00843085 /* CodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
-		341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTreeSitter.framework; path = Bonsai/Libraries/SwiftTreeSitter.framework; sourceTree = "<group>"; };
 		341784A5247EB7EB00843085 /* CodeSyntaxTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSyntaxTree.swift; sourceTree = "<group>"; };
 		341784A7247EE4F600843085 /* SyntaxTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxTreeTests.swift; sourceTree = "<group>"; };
 		341784AD247F13DA00843085 /* CodeSyntaxTree+InputEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeSyntaxTree+InputEdit.swift"; sourceTree = "<group>"; };
@@ -100,6 +120,7 @@
 		346881AE24752F01007AF5C6 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		346881B124752F6E007AF5C6 /* CodeTextGutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextGutter.swift; sourceTree = "<group>"; };
 		34898B3624912F4A00C1E01F /* WorkingDirectoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingDirectoryManager.swift; sourceTree = "<group>"; };
+		34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftTreeSitter.xcodeproj; path = "swift-tree-sitter/SwiftTreeSitter.xcodeproj"; sourceTree = "<group>"; };
 		34CF88422476CF720031D819 /* CodeDocumentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDocumentWindow.swift; sourceTree = "<group>"; };
 		34CF88442476EB630031D819 /* ProjectViewController+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProjectViewController+OutlineView.swift"; sourceTree = "<group>"; };
 		34CF8846247720BD0031D819 /* ProjectFileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileItemCell.swift; sourceTree = "<group>"; };
@@ -130,21 +151,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343E14A62487B2520067F56C /* SwiftTreeSitter.framework in Frameworks */,
+				34898B742491422200C1E01F /* SwiftTreeSitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		341784A1247EB7AA00843085 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				341784A2247EB7AA00843085 /* SwiftTreeSitter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		341784AC247F13B100843085 /* SyntaxTreeAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +175,8 @@
 				343086102474838E00675B1A /* BonsaiTests */,
 				3430861B2474838E00675B1A /* BonsaiUITests */,
 				343085FA2474838C00675B1A /* Products */,
-				341784A1247EB7AA00843085 /* Frameworks */,
+				34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */,
+				34898B732491422200C1E01F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +284,23 @@
 				345A714224753C7700E47D23 /* CodeTextGutter+LineNumbers.swift */,
 			);
 			path = CodeTextView;
+			sourceTree = "<group>";
+		};
+		34898B622491421100C1E01F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34898B6E2491421200C1E01F /* SwiftTreeSitter.framework */,
+				34898B702491421200C1E01F /* SwiftTreeSitterTests.xctest */,
+				34898B722491421200C1E01F /* libtree-sitter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34898B732491422200C1E01F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		34CF8848247814680031D819 /* PanelLayout */ = {
@@ -387,6 +418,12 @@
 			);
 			productRefGroup = 343085FA2474838C00675B1A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34898B622491421100C1E01F /* Products */;
+					ProjectRef = 34898B612491421100C1E01F /* SwiftTreeSitter.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				343085F82474838C00675B1A /* Bonsai */,
@@ -395,6 +432,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34898B6E2491421200C1E01F /* SwiftTreeSitter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftTreeSitter.framework;
+			remoteRef = 34898B6D2491421200C1E01F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34898B702491421200C1E01F /* SwiftTreeSitterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftTreeSitterTests.xctest;
+			remoteRef = 34898B6F2491421200C1E01F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34898B722491421200C1E01F /* libtree-sitter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libtree-sitter.a";
+			remoteRef = 34898B712491421200C1E01F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		343085F72474838C00675B1A /* Resources */ = {

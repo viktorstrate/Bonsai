@@ -1,0 +1,3 @@
+[submodule "swift-tree-sitter"]
+	path = swift-tree-sitter
+	url = git@github.com:viktorstrate/swift-tree-sitter.git
