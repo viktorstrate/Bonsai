@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CodeTextView: NSTextView, NSTextStorageDelegate {
+class CodeTextView: NSTextView, NSTextStorageDelegate, NSTextViewDelegate {
     
     var gutterView: CodeTextGutter?
     var syntaxTree: CodeSyntaxTree!
@@ -24,6 +24,7 @@ class CodeTextView: NSTextView, NSTextStorageDelegate {
         self.textContainerInset = NSSize(width: 0, height: 10)
         self.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)
         
+        self.delegate = self
         self.allowsUndo = true
         
         self.isAutomaticDataDetectionEnabled = false
@@ -68,10 +69,31 @@ class CodeTextView: NSTextView, NSTextStorageDelegate {
     func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
         
         if editedMask.contains(.editedCharacters) {
+            
             syntaxTree.documentWasEdited(beginIndex: editedRange.location,
                                          with: newStr, oldString: oldStr)
         }
         
+    }
+    
+    func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        //print("doCommand \(commandSelector)")
+        
+        if commandSelector == #selector(self.insertNewline) {
+            let indentLevel = syntaxTree.indentationManager
+                .newlineIndentationLevel(atSelectedRange: self.selectedRange())
+            
+            let indentedNewline = "\n" + repeatElement("  ", count: indentLevel).joined()
+            
+            self.insertText(indentedNewline, replacementRange: self.selectedRange())
+            return true
+        }
+        
+        if commandSelector == #selector(self.insertTab) {
+            self.insertText("  ", replacementRange: self.selectedRange())
+        }
+        
+        return false
     }
     
 }

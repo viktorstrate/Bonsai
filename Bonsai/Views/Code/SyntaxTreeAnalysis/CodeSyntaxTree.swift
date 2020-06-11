@@ -12,6 +12,7 @@ import SwiftTreeSitter
 class CodeSyntaxTree {
     
     let textStorage: NSTextStorage
+    let indentationManager: IndentationManager
     
     var parser: STSParser?
     var highlightsQuery: STSQuery?
@@ -42,9 +43,11 @@ class CodeSyntaxTree {
     init(textStorage: NSTextStorage, document: CodeDocument) {
         self.textStorage = textStorage
         self.theme = SyntaxHighlightTheme()
+        self.indentationManager = IndentationManager()
+        
+        self.indentationManager.codeSyntaxTree = self
         
         initialParse(document: document)
-        
     }
     
     func initialParse(document: CodeDocument) {
